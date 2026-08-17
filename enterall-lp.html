@@ -20,7 +20,6 @@
 
 :root{
   --blue:#1c3f8a;
-  --blue-deep:#1c3f8a;
   --offwhite:#fffcf0;
   --lime:#c7e639;
   --lime-deep:#8fa824;
@@ -43,12 +42,14 @@ body{
 }
 
 h1,h2,h3,.display{
-  font-family:'ATP Pleasurize', serif;
-  font-weight:800;
+  font-family:'Monoglyphic', sans-serif;
+  font-weight:700;
   letter-spacing:-0.01em;
   line-height:1.02;
   color:var(--ink);
 }
+.hero h1{ font-family:'ATP Pleasurize', serif; font-weight:800; }
+.testi-head h2{ font-family:'ATP Pleasurize', serif; font-weight:800; }
 
 .eyebrow{
   font-family:'Monoglyphic', sans-serif;
@@ -136,7 +137,7 @@ img{max-width:100%; display:block;}
   padding:10px 22px;
   border-radius:var(--radius-full);
   background:var(--lime);
-  color:var(--blue-deep);
+  color:var(--blue);
   font-size:14px; font-weight:600;
   text-decoration:none;
   transition:transform .3s var(--ease), background .3s;
@@ -170,7 +171,7 @@ img{max-width:100%; display:block;}
   display:flex;
   align-items:flex-end;
   overflow:hidden;
-  background:var(--blue-deep);
+  background:var(--blue);
 }
 .hero-video{
   position:absolute; inset:0;
@@ -184,7 +185,7 @@ img{max-width:100%; display:block;}
   position:absolute; inset:0;
   z-index:1;
   background:
-    linear-gradient(180deg, rgba(10,25,58,0.15) 0%, rgba(10,25,58,0.45) 55%, #08142e 100%),
+    linear-gradient(180deg, rgba(28,63,138,0.15) 0%, rgba(28,63,138,0.45) 55%, rgba(28,63,138,0.88) 100%),
     radial-gradient(ellipse 60% 50% at 25% 20%, rgba(199,230,57,0.10), transparent 60%);
 }
 .hero-media::after{
@@ -233,7 +234,7 @@ img{max-width:100%; display:block;}
 }
 .btn-primary{
   background:var(--lime);
-  color:var(--blue-deep);
+  color:var(--blue);
   box-shadow:0 0 0 0 rgba(199,230,57,0.5);
 }
 .btn-primary:hover{transform:translateY(-3px); box-shadow:0 14px 30px -10px rgba(199,230,57,0.6);}
@@ -284,12 +285,11 @@ img{max-width:100%; display:block;}
   pointer-events:none;
 }
 .section-fade-light{ background:linear-gradient(to bottom, transparent, #fffcf0); }
-.section-fade-cream{ background:linear-gradient(to bottom, transparent, #f4ead2); }
 .section-fade-top{
   bottom:auto; top:0;
-  height:860px;
+  height:950px;
   z-index:1;
-  background:linear-gradient(to bottom, #08142e 0%, rgba(8,20,46,0.97) 10%, rgba(8,20,46,0.9) 20%, rgba(8,20,46,0.76) 30%, rgba(8,20,46,0.58) 40%, rgba(8,20,46,0.4) 49%, rgba(8,20,46,0.24) 58%, rgba(8,20,46,0.12) 66%, rgba(8,20,46,0.04) 74%, rgba(8,20,46,0) 82%);
+  background:linear-gradient(to bottom, #1c3f8a 0%, rgba(28,63,138,0.85) 3%, rgba(28,63,138,0.42) 9%, rgba(28,63,138,0.16) 15%, rgba(28,63,138,0.07) 22%, rgba(28,63,138,0.025) 32%, rgba(28,63,138,0.008) 45%, rgba(28,63,138,0) 62%);
 }
 @media (max-width:700px){ .section-fade{ height:80px; } .section-fade-top{ height:420px; } }
 
@@ -312,7 +312,7 @@ section{position:relative;}
   background:var(--offwhite);
   position:relative;
   overflow:hidden;
-  padding-top:320px;
+  padding-top:460px;
 }
 @media (max-width:700px){ .product-section{ padding-top:200px; } }
 .fluid-ribbon{
@@ -325,10 +325,10 @@ section{position:relative;}
 }
 .fluid-ribbon svg{ width:100%; height:100%; display:block; }
 .fluid-ribbon.fr-product{
-  top:720px;
+  top:610px;
   animation:ribbonDrift 24s ease-in-out infinite alternate;
 }
-@media (max-width:700px){ .fluid-ribbon.fr-product{ top:360px; } }
+@media (max-width:700px){ .fluid-ribbon.fr-product{ top:280px; } }
 @keyframes ribbonDrift{
   0%{ transform:scale(1.05) translate(0,0) rotate(0deg); }
   50%{ transform:scale(1.08) translate(1%,-1.5%) rotate(1deg); }
@@ -347,7 +347,7 @@ section{position:relative;}
   position:relative;
   width:min(430px, 62vw);
   z-index:3;
-  filter:drop-shadow(0 32px 46px rgba(15,39,87,0.28));
+  filter:drop-shadow(0 32px 46px rgba(28,63,138,0.28));
   animation:productFloat 6s ease-in-out infinite;
 }
 @keyframes productFloat{
@@ -399,14 +399,14 @@ section{position:relative;}
   z-index:6;
 }
 .benefit-card:hover .icon{ background:var(--lime); }
-.benefit-card:hover .icon svg{ stroke:var(--blue-deep); }
+.benefit-card:hover .icon svg{ stroke:var(--blue); }
 .benefit-card.is-active{
   transform:scale(1.05);
   border-color:rgba(199,230,57,0.7);
   box-shadow:0 26px 46px -16px rgba(28,63,138,0.35), 0 0 0 3px rgba(199,230,57,0.25);
 }
 .benefit-card.is-active .icon{ background:var(--lime); }
-.benefit-card.is-active .icon svg{ stroke:var(--blue-deep); }
+.benefit-card.is-active .icon svg{ stroke:var(--blue); }
 
 /* ---------- Drop / statement section (Z reading, drop falls through) ---------- */
 .drop-section{
@@ -451,7 +451,7 @@ section{position:relative;}
 
 /* ---------- Testimonials ---------- */
 .testi-section{
-  background:var(--blue-deep);
+  background:var(--blue);
   padding:90px 0 160px;
   position:relative;
   overflow:hidden;
@@ -671,7 +671,7 @@ section{position:relative;}
 
 /* ---------- Values strip (Bucks Sauce style scroll-stack) ---------- */
 .values-strip{
-  background:var(--blue-deep);
+  background:var(--blue);
   padding:120px 0 70px;
   position:relative;
   overflow:hidden;
@@ -715,7 +715,7 @@ section{position:relative;}
 .value-tag{
   height:54px;
   box-sizing:border-box;
-  background:var(--blue);
+  background:#0f2757;
   color:var(--offwhite);
   font-family:'ATP Pleasurize', serif;
   font-weight:700;
@@ -786,7 +786,7 @@ section{position:relative;}
 
 /* ---------- Footer ---------- */
 footer{
-  background:var(--blue-deep);
+  background:var(--blue);
   color:rgba(255,252,240,0.55);
   padding:40px 0;
   font-size:12px;
@@ -960,7 +960,7 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
       </div>
     </div>
   </div>
-  <div class="section-fade section-fade-cream"></div>
+  <div class="section-fade section-fade-light"></div>
 </section>
 
 <!-- DROP / STATEMENT SECTION -->
