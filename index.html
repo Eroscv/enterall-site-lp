@@ -285,6 +285,7 @@ img{max-width:100%; display:block;}
   pointer-events:none;
 }
 .section-fade-light{ background:linear-gradient(to bottom, transparent, #fffcf0); }
+.section-fade-top-light{ bottom:auto; top:0; background:linear-gradient(to top, transparent, #fffcf0); }
 .section-fade-top{
   bottom:auto; top:0;
   height:950px;
@@ -410,7 +411,7 @@ section{position:relative;}
 
 /* ---------- Drop / statement section (Z reading, drop falls through) ---------- */
 .drop-section{
-  background:var(--cream);
+  background:var(--offwhite);
   padding:160px 0 140px;
   position:relative;
   overflow:hidden;
@@ -987,6 +988,7 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 
 <!-- DROP / STATEMENT SECTION -->
 <section class="drop-section" id="cuidado">
+  <div class="section-fade section-fade-top-light"></div>
   <div class="wrap">
     <div class="drop-zstack" id="dropZstack">
       <div class="drop-placeholder ph-tl" id="phTL" aria-hidden="true">
