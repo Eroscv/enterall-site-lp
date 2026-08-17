@@ -288,8 +288,10 @@ section{position:relative;}
 }
 .fluid-ribbon svg{ width:100%; height:100%; display:block; }
 .fluid-ribbon.fr-product{
+  top:720px;
   animation:ribbonDrift 24s ease-in-out infinite alternate;
 }
+@media (max-width:700px){ .fluid-ribbon.fr-product{ top:360px; } }
 @keyframes ribbonDrift{
   0%{ transform:scale(1.05) translate(0,0) rotate(0deg); }
   50%{ transform:scale(1.08) translate(1%,-1.5%) rotate(1deg); }
