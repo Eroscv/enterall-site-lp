@@ -554,6 +554,7 @@ section{position:relative;}
   border:none;
 }
 .testi-play svg{width:16px; height:16px; fill:var(--offwhite); stroke:none; opacity:1;}
+.testi-carousel-wrap .carousel-arrow.prev{ left:300px; }
 .testi-carousel{
   display:flex;
   gap:20px;
@@ -860,6 +861,7 @@ footer{
   .drop-zstack{ padding-left:92px; }
   .gota-marquee{ display:block; }
   .testi-media-pin{ display:none; }
+  .testi-carousel-wrap .carousel-arrow.prev{ left:12px; }
   .bestsellers-grid{
     display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
     gap:18px; padding:4px 4px 12px;
@@ -884,25 +886,27 @@ footer{
   .product-core{ margin-bottom:0; }
 
   .benefit-carousel-wrap{
-    display:flex; align-items:center; gap:10px;
-    width:100%; margin-bottom:36px;
+    display:block;
+    position:relative;
+    overflow:hidden;
+    width:100%;
+    margin-bottom:36px;
   }
   .benefit-carousel{
-    display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
-    gap:18px; padding:4px 4px 10px; flex:1;
+    display:flex; align-items:center;
+    gap:18px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    padding:8px 44px 10px;
     scrollbar-width:none;
   }
   .benefit-carousel::-webkit-scrollbar{ display:none; }
   .benefit-card{
-    position:relative; width:min(320px, 78vw); flex:0 0 auto;
+    position:relative; width:min(300px, 76vw); flex:0 0 auto;
     scroll-snap-align:center;
     top:auto; left:auto; right:auto; bottom:auto; margin-bottom:0;
   }
-  .benefit-carousel-arrow{
-    display:flex; position:static; transform:none; flex:0 0 auto;
-    width:38px; height:38px;
-  }
-  .benefit-carousel-arrow:hover{ transform:none; }
+  .benefit-carousel-arrow{ display:flex; }
 }
 /* ---------- Custom cursor ---------- */
 html.has-custom-cursor, body.has-custom-cursor{ cursor:none; }
@@ -1167,6 +1171,12 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
           <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg>
         </button>
       </div>
+      <button class="carousel-arrow prev" id="testiPrev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="carousel-arrow next" id="testiNext" aria-label="Próximo">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
       <div class="testi-carousel" id="testiCarousel"></div>
     </div>
 
@@ -1575,6 +1585,15 @@ if (testiCarousel) {
     testiCarousel.scrollLeft = step * testiSetCount * Math.floor(TESTI_REPEATS / 2);
   }
   testiCenterStart();
+
+  const testiPrev = document.getElementById('testiPrev');
+  const testiNext = document.getElementById('testiNext');
+  if (testiPrev) testiPrev.onclick = function(){
+    testiCarousel.scrollBy({ left: -testiCardStep(), behavior: 'smooth' });
+  };
+  if (testiNext) testiNext.onclick = function(){
+    testiCarousel.scrollBy({ left: testiCardStep(), behavior: 'smooth' });
+  };
 
   function testiWrapScroll() {
     const step = testiCardStep();
