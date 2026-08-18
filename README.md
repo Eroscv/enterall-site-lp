@@ -24,17 +24,21 @@ O layout é adaptado tanto para desktop quanto para mobile:
 
 ## Stack técnica
 
-O projeto é um **arquivo HTML único** (`enterall-lp.html`, espelhado em `index.html` para o GitHub Pages), sem build step nem dependências externas:
-
-- HTML + CSS + JavaScript puro (vanilla)
-- Fontes, imagens e vídeo do hero embutidos como `data:` URI (base64) diretamente no arquivo — o site funciona offline e não depende de nenhum asset externo
-- Vídeo do hero convertido para `Blob URL` via JS no carregamento, para garantir reprodução confiável em todos os navegadores (inclusive Safari/WebKit)
+HTML + CSS + JavaScript puro (vanilla), sem build step nem dependências externas — CSS e JS ficam em arquivos próprios, e fontes/imagens/vídeo são arquivos estáticos servidos diretamente (sem base64), o que permite cache do navegador e mantém o HTML enxuto.
 
 ## Estrutura do repositório
 
 ```
 enterall-lp.html   # arquivo principal do site
 index.html         # cópia idêntica, usada pelo GitHub Pages
+css/
+  styles.css       # todo o CSS do site
+js/
+  script.js        # toda a lógica (carrosséis, animações, posicionamento dinâmico etc.)
+assets/
+  fonts/           # fontes customizadas (woff2/ttf)
+  images/          # logo, produto, fotos da seção "gota", catálogo
+  video/           # vídeo de fundo do hero
 ```
 
 ## Deploy
