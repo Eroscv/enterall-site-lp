@@ -876,7 +876,6 @@ footer{
   .value-card{ width:82vw; }
   .drop-section{ padding:120px 0 110px; }
   .drop-zstack{ min-height:500px; }
-  .benefit-carousel-arrow{ display:flex; }
 }
 
 /* Product benefit cards: below ~1300px the fixed-size absolute layout
@@ -909,6 +908,10 @@ footer{
   }
   /* ALTERAR AQUI — setas do carrossel 'Uma fórmula': display:none oculta no desktop, troque por display:flex para mostrar */
   .benefit-carousel-arrow{ display:none; }
+}
+/* Setas do carrossel de benefícios: visíveis apenas no mobile */
+@media (max-width: 860px){
+  .benefit-carousel-arrow{ display:flex; }
 }
 /* ---------- Custom cursor ---------- */
 html.has-custom-cursor, body.has-custom-cursor{ cursor:none; }
