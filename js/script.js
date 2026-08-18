@@ -204,10 +204,17 @@ function setupAutoplayCarousel(track, { prevBtn, nextBtn, interval = 4200, onEnd
   function atEnd() {
     return track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
   }
+  function atStart() {
+    return track.scrollLeft <= 4;
+  }
   function scrollByStep(dir) {
     if (dir > 0 && atEnd()) {
       if (onEnd) { onEnd(); return; }
       track.scrollTo({ left: 0, behavior: 'smooth' });
+      return;
+    }
+    if (dir < 0 && atStart()) {
+      track.scrollTo({ left: track.scrollWidth - track.clientWidth, behavior: 'smooth' });
       return;
     }
     track.scrollBy({ left: dir * step(), behavior: 'smooth' });
