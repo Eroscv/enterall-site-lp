@@ -146,7 +146,7 @@ const isMobileViewport = () => window.innerWidth <= 860;
   ];
   const margin = 40; // breathing room from the real viewport edge (covers the rotated bounding-box growth)
   const gap = 24; // breathing room between the photo's inner edge and the text column
-  const minScale = 0.6; // never shrink a photo past this, even if space is very tight
+  const minScale = 0.2; // purely defensive floor; the formula below never needs it in practice
   function positionDropPhotos() {
     if (window.innerWidth <= 1300) return; // hidden at this size anyway
     const r = zstack.getBoundingClientRect();
@@ -154,20 +154,14 @@ const isMobileViewport = () => window.innerWidth <= 860;
       const el = document.getElementById(id);
       if (!el) return;
       const edgeDistance = side === 'left' ? r.left : (window.innerWidth - r.right);
-      const viewportSafe = margin - edgeDistance; // least bleed that avoids clipping the viewport edge
-      const textSafe = -(width + gap); // most bleed that still guarantees no overlap with the text column
-      let offset, scale = 1;
-      if (viewportSafe <= textSafe) {
-        // Enough room for a full bleed without ever touching the text column.
-        offset = Math.min(textSafe, Math.max(-base, viewportSafe));
-      } else {
-        // Not enough room to clear the text column without clipping the viewport —
-        // keep the photo glued just outside the column and shrink it instead of
-        // letting it creep back over the text.
-        offset = textSafe;
-        const available = Math.max(margin, edgeDistance);
-        scale = Math.max(minScale, Math.min(1, available / (width + gap)));
-      }
+      // Solve offset + scale together (both measured around the photo's own
+      // center, since that's how the CSS transform scales it) so the photo is
+      // simultaneously as large as possible, never clips past the real
+      // viewport edge, and never overlaps the text column — at any width.
+      const scale = Math.max(minScale, Math.min(1, (edgeDistance - margin - gap) / width));
+      const lowerBound = margin - edgeDistance - (width * (1 - scale)) / 2; // clip-safe bound
+      const upperBound = -gap - (width * (1 + scale)) / 2; // overlap-safe bound
+      const offset = Math.max(lowerBound, Math.min(-base, upperBound));
       el.style.setProperty('--drop-scale', scale.toFixed(3));
       if (side === 'left') {
         el.style.left = offset + 'px';
