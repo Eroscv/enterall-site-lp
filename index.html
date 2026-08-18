@@ -1395,6 +1395,9 @@ const isMobileViewport = () => window.innerWidth <= 860;
   }
   positionDropPhotos();
   window.addEventListener('resize', positionDropPhotos);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', positionDropPhotos);
+  }
 })();
 
 // Gota photos marquee (mobile only) — clones the existing corner-photo <img>s
