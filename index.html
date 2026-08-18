@@ -876,6 +876,7 @@ footer{
   .value-card{ width:82vw; }
   .drop-section{ padding:120px 0 110px; }
   .drop-zstack{ min-height:500px; }
+  .benefit-carousel-arrow{ display:flex; }
 }
 
 /* Product benefit cards: below ~1300px the fixed-size absolute layout
@@ -906,7 +907,8 @@ footer{
     scroll-snap-align:center;
     top:auto; left:auto; right:auto; bottom:auto; margin-bottom:0;
   }
-  .benefit-carousel-arrow{ display:flex; }
+  /* ALTERAR AQUI — setas do carrossel 'Uma fórmula': display:none oculta no desktop, troque por display:flex para mostrar */
+  .benefit-carousel-arrow{ display:none; }
 }
 /* ---------- Custom cursor ---------- */
 html.has-custom-cursor, body.has-custom-cursor{ cursor:none; }
