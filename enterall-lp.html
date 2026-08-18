@@ -1360,6 +1360,43 @@ if (bestsellersGrid) {
 // resumes shortly after.
 const isMobileViewport = () => window.innerWidth <= 860;
 
+// Corner photos in the "gota" section (ph-tl/tr/bl/br) are meant to bleed
+// past the centered .drop-zstack column, but the bleed amount was a fixed
+// px value tuned for one width — it clipped against the real viewport edge
+// across most desktop sizes. Compute the safe bleed live from the actual
+// measured layout instead of guessing a fixed number.
+(function(){
+  const zstack = document.getElementById('dropZstack');
+  if (!zstack) return;
+  const specs = [
+    { id: 'phTL', side: 'left',  base: 420 },
+    { id: 'phBL', side: 'left',  base: 440 },
+    { id: 'phTR', side: 'right', base: 440 },
+    { id: 'phBR', side: 'right', base: 440 },
+  ];
+  const margin = 40; // breathing room from the real viewport edge (covers the rotated bounding-box growth)
+  function positionDropPhotos() {
+    if (window.innerWidth <= 1300) return; // hidden at this size anyway
+    const r = zstack.getBoundingClientRect();
+    specs.forEach(({ id, side, base }) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      let safe;
+      if (side === 'left') {
+        safe = Math.max(-base, margin - r.left);
+        el.style.left = safe + 'px';
+        el.style.right = 'auto';
+      } else {
+        safe = Math.max(-base, margin - (window.innerWidth - r.right));
+        el.style.right = safe + 'px';
+        el.style.left = 'auto';
+      }
+    });
+  }
+  positionDropPhotos();
+  window.addEventListener('resize', positionDropPhotos);
+})();
+
 // Gota photos marquee (mobile only) — clones the existing corner-photo <img>s
 // (no duplicate base64 in the HTML) into a continuously scrolling, looping strip.
 (function(){
