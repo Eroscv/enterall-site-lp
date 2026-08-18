@@ -395,7 +395,7 @@ section{position:relative;}
 .benefit-card{ transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease); }
 .benefit-carousel-wrap{ display:contents; }
 .benefit-carousel{ display:contents; }
-.benefit-carousel-arrow{ display:none; }
+.benefit-carousel-wrap .benefit-carousel-arrow{ display:none; }
 .benefit-card:hover{
   transform:scale(1.045) translateY(-6px);
   border-color:rgba(199,230,57,0.7);
@@ -862,6 +862,7 @@ footer{
   .gota-marquee{ display:block; }
   .testi-media-pin{ display:none; }
   .testi-carousel-wrap .carousel-arrow.prev{ left:12px; }
+  .benefit-carousel-wrap .benefit-carousel-arrow{ display:flex; }
   .bestsellers-grid{
     display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
     gap:18px; padding:4px 4px 12px;
@@ -906,7 +907,6 @@ footer{
     scroll-snap-align:center;
     top:auto; left:auto; right:auto; bottom:auto; margin-bottom:0;
   }
-  .benefit-carousel-arrow{ display:flex; }
 }
 /* ---------- Custom cursor ---------- */
 html.has-custom-cursor, body.has-custom-cursor{ cursor:none; }
