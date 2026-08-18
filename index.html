@@ -465,14 +465,14 @@ section{position:relative;}
 }
 .drop-placeholder.is-visible{ opacity:1; }
 .drop-placeholder img{ width:100%; height:100%; display:block; object-fit:cover; }
-.ph-tl{ top:10px; left:-420px; width:350px; height:260px; transform:translateY(34px) rotate(-7deg); }
-.ph-tl.is-visible{ transform:translateY(0) rotate(-7deg); }
-.ph-tr{ top:210px; right:-440px; width:390px; height:280px; transform:translateY(34px) rotate(9deg); }
-.ph-tr.is-visible{ transform:translateY(0) rotate(9deg); }
-.ph-bl{ top:440px; left:-440px; width:380px; height:275px; transform:translateY(34px) rotate(10deg); }
-.ph-bl.is-visible{ transform:translateY(0) rotate(10deg); }
-.ph-br{ top:590px; right:-440px; width:380px; height:275px; transform:translateY(34px) rotate(-8deg); }
-.ph-br.is-visible{ transform:translateY(0) rotate(-8deg); }
+.ph-tl{ top:10px; left:-420px; width:350px; height:260px; transform:translateY(34px) rotate(-7deg) scale(var(--drop-scale,1)); }
+.ph-tl.is-visible{ transform:translateY(0) rotate(-7deg) scale(var(--drop-scale,1)); }
+.ph-tr{ top:210px; right:-440px; width:390px; height:280px; transform:translateY(34px) rotate(9deg) scale(var(--drop-scale,1)); }
+.ph-tr.is-visible{ transform:translateY(0) rotate(9deg) scale(var(--drop-scale,1)); }
+.ph-bl{ top:440px; left:-440px; width:380px; height:275px; transform:translateY(34px) rotate(10deg) scale(var(--drop-scale,1)); }
+.ph-bl.is-visible{ transform:translateY(0) rotate(10deg) scale(var(--drop-scale,1)); }
+.ph-br{ top:590px; right:-440px; width:380px; height:275px; transform:translateY(34px) rotate(-8deg) scale(var(--drop-scale,1)); }
+.ph-br.is-visible{ transform:translateY(0) rotate(-8deg) scale(var(--drop-scale,1)); }
 .gota-marquee{
   display:none;
   overflow:hidden;
@@ -861,8 +861,6 @@ footer{
   .drop-zstack{ padding-left:92px; }
   .gota-marquee{ display:block; }
   .testi-media-pin{ display:none; }
-  .testi-carousel-wrap .carousel-arrow.prev{ left:12px; }
-  .benefit-carousel-wrap .benefit-carousel-arrow{ display:flex; }
   .bestsellers-grid{
     display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
     gap:18px; padding:4px 4px 12px;
@@ -907,6 +905,21 @@ footer{
     scroll-snap-align:center;
     top:auto; left:auto; right:auto; bottom:auto; margin-bottom:0;
   }
+}
+/* Carousel arrows (benefits + testimonials) on mobile: pull them out of the
+   absolute overlay and into a row above the card content, same pattern as
+   the product carousel's .catalog-nav, so they never sit on top of the card. */
+@media (max-width: 860px){
+  .testi-carousel-wrap{ display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
+  .testi-carousel-wrap .carousel-arrow{ position:relative; top:auto; left:auto !important; right:auto !important; transform:none; }
+  .testi-carousel-wrap .carousel-arrow.prev{ order:1; }
+  .testi-carousel-wrap .carousel-arrow.next{ order:2; }
+  .testi-carousel-wrap #testiCarousel{ order:3; flex:0 0 100%; }
+  .benefit-carousel-wrap{ display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
+  .benefit-carousel-wrap .benefit-carousel-arrow{ display:flex; position:relative; top:auto; left:auto; right:auto; transform:none; }
+  .benefit-carousel-wrap .benefit-carousel-arrow.prev{ order:1; }
+  .benefit-carousel-wrap .benefit-carousel-arrow.next{ order:2; }
+  .benefit-carousel-wrap #benefitCarousel{ order:3; flex:0 0 100%; }
 }
 /* ---------- Custom cursor ---------- */
 html.has-custom-cursor, body.has-custom-cursor{ cursor:none; }
@@ -1369,26 +1382,41 @@ const isMobileViewport = () => window.innerWidth <= 860;
   const zstack = document.getElementById('dropZstack');
   if (!zstack) return;
   const specs = [
-    { id: 'phTL', side: 'left',  base: 420 },
-    { id: 'phBL', side: 'left',  base: 440 },
-    { id: 'phTR', side: 'right', base: 440 },
-    { id: 'phBR', side: 'right', base: 440 },
+    { id: 'phTL', side: 'left',  base: 420, width: 350 },
+    { id: 'phBL', side: 'left',  base: 440, width: 380 },
+    { id: 'phTR', side: 'right', base: 440, width: 390 },
+    { id: 'phBR', side: 'right', base: 440, width: 380 },
   ];
   const margin = 40; // breathing room from the real viewport edge (covers the rotated bounding-box growth)
+  const gap = 24; // breathing room between the photo's inner edge and the text column
+  const minScale = 0.6; // never shrink a photo past this, even if space is very tight
   function positionDropPhotos() {
     if (window.innerWidth <= 1300) return; // hidden at this size anyway
     const r = zstack.getBoundingClientRect();
-    specs.forEach(({ id, side, base }) => {
+    specs.forEach(({ id, side, base, width }) => {
       const el = document.getElementById(id);
       if (!el) return;
-      let safe;
+      const edgeDistance = side === 'left' ? r.left : (window.innerWidth - r.right);
+      const viewportSafe = margin - edgeDistance; // least bleed that avoids clipping the viewport edge
+      const textSafe = -(width + gap); // most bleed that still guarantees no overlap with the text column
+      let offset, scale = 1;
+      if (viewportSafe <= textSafe) {
+        // Enough room for a full bleed without ever touching the text column.
+        offset = Math.min(textSafe, Math.max(-base, viewportSafe));
+      } else {
+        // Not enough room to clear the text column without clipping the viewport —
+        // keep the photo glued just outside the column and shrink it instead of
+        // letting it creep back over the text.
+        offset = textSafe;
+        const available = Math.max(margin, edgeDistance);
+        scale = Math.max(minScale, Math.min(1, available / (width + gap)));
+      }
+      el.style.setProperty('--drop-scale', scale.toFixed(3));
       if (side === 'left') {
-        safe = Math.max(-base, margin - r.left);
-        el.style.left = safe + 'px';
+        el.style.left = offset + 'px';
         el.style.right = 'auto';
       } else {
-        safe = Math.max(-base, margin - (window.innerWidth - r.right));
-        el.style.right = safe + 'px';
+        el.style.right = offset + 'px';
         el.style.left = 'auto';
       }
     });
