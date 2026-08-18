@@ -1115,27 +1115,27 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 </footer>
 
 <script>
-// Hero video: swap the embedded data URI for a Blob URL — Safari/WebKit can
-// silently refuse to autoplay <video> sourced directly from a data: URI even
-// when the file itself is valid, but Blob URLs are reliably supported.
+// Hero video: converte data URI para Blob URL via fetch (assíncrono, não trava o browser).
 (function(){
   const video = document.getElementById('heroVideo');
   const source = video ? video.querySelector('source[data-src]') : null;
   if (!video || !source) return;
-  try {
-    const dataUrl = source.getAttribute('data-src');
-    const base64 = dataUrl.slice(dataUrl.indexOf(',') + 1);
-    const binary = atob(base64);
-    const bytes = new Uint8Array(binary.length);
-    for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-    const blobUrl = URL.createObjectURL(new Blob([bytes], { type: 'video/mp4' }));
-    source.src = blobUrl;
-  } catch (e) {
-    source.src = source.getAttribute('data-src');
-  }
-  video.load();
-  const playPromise = video.play();
-  if (playPromise && playPromise.catch) playPromise.catch(() => {});
+  const dataUrl = source.getAttribute('data-src');
+  fetch(dataUrl)
+    .then(function(r){ return r.blob(); })
+    .then(function(blob){
+      source.src = URL.createObjectURL(blob);
+      video.load();
+      var p = video.play();
+      if (p && p.catch) p.catch(function(){});
+    })
+    .catch(function(){
+      // fallback direto
+      source.src = dataUrl;
+      video.load();
+      var p = video.play();
+      if (p && p.catch) p.catch(function(){});
+    });
 })();
 
 // Nav scroll state
