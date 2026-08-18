@@ -872,30 +872,35 @@ footer{
   .testi-card{ width:80vw; height:auto; min-height:340px; }
   .values-carousel{ padding:10px 24px 20px; margin:0; }
   .value-card{ width:82vw; }
-  .product-stage{min-height:auto;}
   .drop-section{ padding:120px 0 110px; }
   .drop-zstack{ min-height:500px; }
-  .product-stage{display:flex; flex-direction:column; align-items:center;}
+}
+
+/* Product benefit cards: below ~1300px the fixed-size absolute layout
+   (tuned for wide desktop) overlaps the product image, so it switches to
+   the same swipeable carousel used on mobile, just wider/roomier. */
+@media (max-width: 1300px){
+  .product-stage{min-height:auto; display:flex; flex-direction:column; align-items:center;}
   .product-core{ margin-bottom:0; }
 
   .benefit-carousel-wrap{
-    display:flex; align-items:center; gap:6px;
+    display:flex; align-items:center; gap:10px;
     width:100%; margin-bottom:36px;
   }
   .benefit-carousel{
     display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
-    gap:14px; padding:4px 4px 10px; flex:1;
+    gap:18px; padding:4px 4px 10px; flex:1;
     scrollbar-width:none;
   }
   .benefit-carousel::-webkit-scrollbar{ display:none; }
   .benefit-card{
-    position:relative; width:78vw; flex:0 0 auto;
+    position:relative; width:min(320px, 78vw); flex:0 0 auto;
     scroll-snap-align:center;
     top:auto; left:auto; right:auto; bottom:auto; margin-bottom:0;
   }
   .benefit-carousel-arrow{
     display:flex; position:static; transform:none; flex:0 0 auto;
-    width:36px; height:36px;
+    width:38px; height:38px;
   }
   .benefit-carousel-arrow:hover{ transform:none; }
 }
@@ -1388,7 +1393,7 @@ function setupAutoplayCarousel(track, { prevBtn, nextBtn, interval = 4200, onEnd
   return { play, stop, pause, scrollByStep };
 }
 
-if (isMobileViewport()) {
+if (window.innerWidth <= 1300) {
   setupAutoplayCarousel(document.getElementById('benefitCarousel'), {
     prevBtn: document.getElementById('benefitPrev'),
     nextBtn: document.getElementById('benefitNext')
