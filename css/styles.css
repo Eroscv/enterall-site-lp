@@ -491,7 +491,7 @@ section{position:relative;}
   from{ transform:translateX(0); }
   to{ transform:translateX(-50%); }
 }
-@media (max-width:1300px){ .drop-placeholder{ display:none; } }
+@media (max-width:1300px){ .drop-placeholder{ display:none; } .gota-marquee{ display:block; } }
 
 /* ---------- Testimonials ---------- */
 .testi-section{
@@ -564,7 +564,7 @@ section{position:relative;}
   scroll-snap-align:start;
   flex:0 0 auto;
   width:min(300px, 76vw);
-  height:460px;
+  min-height:460px;
   box-sizing:border-box;
   background:var(--offwhite);
   border-radius:20px;
@@ -640,7 +640,7 @@ section{position:relative;}
 .bestsellers-grid{
   display:grid;
   grid-template-columns:repeat(2, 1fr);
-  grid-auto-rows:260px;
+  grid-auto-rows:minmax(260px, auto);
   gap:22px;
 }
 .bestseller-card{
@@ -758,7 +758,7 @@ section{position:relative;}
 }
 .value-card.is-visible{ opacity:1; }
 .value-tag{
-  height:54px;
+  min-height:54px;
   box-sizing:border-box;
   background:#0f2757;
   color:var(--offwhite);
