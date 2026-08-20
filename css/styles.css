@@ -1093,7 +1093,7 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 }
 .pdp-gallery-main img{ width:100%; max-width:320px; height:auto; object-fit:contain; }
 .pdp-info h1{
-  font-family:'ATP Pleasurize', serif;
+  font-family:'Monoglyphic', sans-serif;
   font-size:clamp(30px,3.6vw,42px);
   margin-bottom:16px;
 }
