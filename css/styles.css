@@ -476,7 +476,7 @@ section{position:relative;}
 .z-left{ margin-right:auto; text-align:left; transform:translateX(-26px); }
 .z-right{ margin-left:auto; text-align:right; transform:translateX(26px); }
 .z-hero{ font-size:clamp(28px,4.6vw,52px); }
-.z-sub{ font-size:clamp(20px,2.8vw,32px); }
+.z-sub{ font-size:clamp(20px,2.8vw,32px); font-family:'Monoglyphic', sans-serif; }
 .drop-placeholder{
   position:absolute;
   opacity:0;
@@ -700,7 +700,7 @@ section{position:relative;}
 }
 .line-card-icon svg{ width:24px; height:24px; stroke:currentColor; fill:none; stroke-width:1.6; }
 .line-card h3{
-  font-family:'ATP Pleasurize', serif;
+  font-family:'Monoglyphic', sans-serif;
   font-weight:800;
   font-size:clamp(26px,2.8vw,32px);
   margin-bottom:12px;
@@ -872,7 +872,7 @@ section{position:relative;}
   box-sizing:border-box;
   background:#0f2757;
   color:var(--offwhite);
-  font-family:'ATP Pleasurize', serif;
+  font-family:'Monoglyphic', sans-serif;
   font-weight:700;
   font-size:16px;
   display:flex; align-items:center; justify-content:center;
