@@ -259,10 +259,6 @@ function setupAutoplayCarousel(track, { prevBtn, nextBtn, interval = 4200, onEnd
 }
 
 if (window.innerWidth <= 1300) {
-  setupAutoplayCarousel(document.getElementById('benefitCarousel'), {
-    prevBtn: document.getElementById('benefitPrev'),
-    nextBtn: document.getElementById('benefitNext')
-  });
   const benefitCarousel2 = document.getElementById('benefitCarousel2');
   if (benefitCarousel2) {
     setupAutoplayCarousel(benefitCarousel2, {
