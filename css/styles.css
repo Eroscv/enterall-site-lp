@@ -321,8 +321,10 @@ section{position:relative;}
 .fluid-ribbon svg{ width:100%; height:100%; display:block; }
 .fluid-ribbon.fr-product{
   top:610px;
+  left:50%;
   animation:ribbonDrift 24s ease-in-out infinite alternate;
 }
+@media (max-width:960px){ .fluid-ribbon.fr-product{ left:0; } }
 @media (max-width:700px){ .fluid-ribbon.fr-product{ top:280px; } }
 @keyframes ribbonDrift{
   0%{ transform:scale(1.05) translate(0,0) rotate(0deg); }
@@ -431,7 +433,7 @@ section{position:relative;}
 }
 .benefit-card .icon svg{width:22px; height:22px; stroke:var(--blue); fill:none; stroke-width:1.6;}
 .benefit-card h4{
-  font-family:'ATP Pleasurize', serif;
+  font-family:'Monoglyphic', sans-serif;
   font-weight:700; font-size:18px;
   margin-bottom:6px;
 }
@@ -814,7 +816,7 @@ section{position:relative;}
   text-align:left;
 }
 .bestseller-info h4{
-  font-family:'ATP Pleasurize', serif;
+  font-family:'Monoglyphic', sans-serif;
   font-size:18px;
   margin-bottom:6px;
 }
@@ -1284,7 +1286,7 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .pdp-related-card:hover{ transform:translateY(-4px); box-shadow:0 20px 40px -20px rgba(18,32,69,0.25); }
 .pdp-related-media{ width:64px; height:64px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
 .pdp-related-media img{ width:100%; height:100%; object-fit:contain; }
-.pdp-related-info h4{ font-family:'ATP Pleasurize', serif; font-size:16px; margin-bottom:4px; }
+.pdp-related-info h4{ font-family:'Monoglyphic', sans-serif; font-size:16px; margin-bottom:4px; }
 .pdp-related-info span{ font-size:13px; color:var(--ink-soft); }
 
 @media (max-width:860px){
