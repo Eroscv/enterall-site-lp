@@ -16,6 +16,29 @@
   document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else play(); });
 })();
 
+// Product page (PDP) gallery thumbnails — click swaps the main image; placeholder
+// thumbs (angles we don't have real photos for yet) swap in a labeled gradient block.
+(function(){
+  const main = document.getElementById('pdpGalleryMain');
+  const thumbs = document.querySelectorAll('.pdp-thumb');
+  if (!main || !thumbs.length) return;
+  const realImgSrc = main.querySelector('img') ? main.querySelector('img').src : '';
+  const realImgAlt = main.querySelector('img') ? main.querySelector('img').alt : '';
+  thumbs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      thumbs.forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      if (btn.dataset.placeholder) {
+        main.classList.add('is-placeholder');
+        main.innerHTML = `<span>${btn.dataset.placeholder}<br><em style="font-style:normal;opacity:.7;">(foto a confirmar)</em></span>`;
+      } else {
+        main.classList.remove('is-placeholder');
+        main.innerHTML = `<img src="${btn.dataset.img || realImgSrc}" alt="${btn.dataset.label || realImgAlt}">`;
+      }
+    });
+  });
+})();
+
 // Nav scroll state
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {

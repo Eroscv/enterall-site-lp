@@ -37,8 +37,19 @@
 
     <div class="pdp-header-grid">
       <div class="pdp-gallery">
-        <div class="pdp-gallery-main">
+        <div class="pdp-gallery-main" id="pdpGalleryMain">
           <img src="assets/images/products/product-5.png" alt="Intake Basic 1.0 - 1L">
+        </div>
+        <div class="pdp-thumbs">
+          <button class="pdp-thumb is-active" data-img="assets/images/products/product-5.png" data-label="Intake Basic 1.0 - 1L" aria-label="Foto do produto">
+            <img src="assets/images/products/product-5.png" alt="">
+          </button>
+          <button class="pdp-thumb pdp-thumb-placeholder" data-placeholder="Verso da embalagem" aria-label="Verso da embalagem">
+            <span>Verso da<br>embalagem</span>
+          </button>
+          <button class="pdp-thumb pdp-thumb-placeholder" data-placeholder="Tabela nutricional" aria-label="Tabela nutricional (foto)">
+            <span>Tabela<br>nutricional</span>
+          </button>
         </div>
       </div>
 
@@ -47,6 +58,21 @@
         <div class="pdp-meta">
           <span class="pdp-tag">Sabor: Baunilha</span>
           <span class="pdp-reg">Registro MS/ANVISA — a confirmar</span>
+        </div>
+
+        <div class="pdp-selector">
+          <div class="pdp-selector-group">
+            <span class="pdp-selector-label">Sabor</span>
+            <div class="pdp-selector-options">
+              <button type="button" class="pdp-selector-opt is-active" aria-pressed="true">Baunilha</button>
+            </div>
+          </div>
+          <div class="pdp-selector-group">
+            <span class="pdp-selector-label">Tamanho</span>
+            <div class="pdp-selector-options">
+              <button type="button" class="pdp-selector-opt is-active" aria-pressed="true">1L</button>
+            </div>
+          </div>
         </div>
 
         <p class="pdp-lead">Nutrição enteral especializada e acessível, com qualidade e segurança para facilitar a adesão à terapia nutricional — democratizando o acesso ao cuidado nutricional.</p>
@@ -184,6 +210,25 @@
     </div>
     <div class="testi-carousel" id="productReviewsCarousel"></div>
     <p class="testi-note reveal">Depoimentos ilustrativos para fins de protótipo — substituir por histórias reais e autorizadas antes da publicação.</p>
+  </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="pdp-related section-pad">
+  <div class="wrap">
+    <div class="center-head reveal">
+      <h2>Veja também</h2>
+      <p>Outras fórmulas da linha Intake Basic.</p>
+    </div>
+    <div class="pdp-related-grid">
+      <a href="intake-basic-1-5.html" class="pdp-related-card">
+        <div class="pdp-related-media"><img src="assets/images/products/product-6.png" alt="Intake Basic 1.5 - 1L"></div>
+        <div class="pdp-related-info">
+          <h4>Intake Basic 1.5</h4>
+          <span>1L · Baunilha</span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
