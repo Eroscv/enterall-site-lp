@@ -1190,6 +1190,7 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 }
 .value-icon-standalone{ display:flex; flex-direction:column; align-items:center; gap:12px; width:140px; text-align:center; }
 .value-icon-standalone span{ font-size:13px; color:var(--ink-soft); }
+.pdp-icon-img{ width:58px; height:58px; object-fit:contain; }
 
 .pdp-diff{ background:var(--cream); }
 .pdp-diff-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
