@@ -302,54 +302,6 @@ section{position:relative;}
 .center-head h2{font-size:clamp(30px,4vw,46px); margin-top:16px; text-shadow:0 1px 24px rgba(255,252,240,0.5);}
 .center-head p{ color:var(--ink-soft); font-size:16px; font-weight:300; margin-top:16px; }
 
-/* ---------- About / Quem Somos ---------- */
-.about-section{ background:var(--offwhite); }
-.about-row{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:64px;
-  align-items:center;
-  margin-bottom:100px;
-}
-.about-row-reverse .about-media{ order:2; }
-.about-row-reverse .about-copy{ order:1; }
-.about-media{
-  border-radius:var(--radius-lg);
-  min-height:360px;
-  display:flex; align-items:flex-end;
-  padding:28px;
-  color:rgba(255,252,240,0.85);
-  font-size:14px;
-  line-height:1.4;
-}
-.about-media span{
-  border:1px solid rgba(255,252,240,0.3);
-  border-radius:16px;
-  padding:10px 16px;
-  background:rgba(18,32,69,0.15);
-}
-.about-media-patients{ background:linear-gradient(140deg, #1c3f8a 0%, #3a2f6b 100%); }
-.about-media-founder{ background:linear-gradient(140deg, #16305f 0%, #1c3f8a 60%, #2a4f9e 100%); }
-.about-copy h2{ font-size:clamp(28px,3.6vw,40px); margin-bottom:20px; }
-.about-copy p{ font-size:15px; line-height:1.65; color:var(--ink-soft); font-weight:300; margin-bottom:16px; }
-.about-copy p:last-child{ margin-bottom:0; }
-.about-team{ display:flex; flex-wrap:wrap; justify-content:center; gap:32px; }
-.about-team-card{ text-align:center; width:160px; }
-.about-team-photo{
-  width:120px; height:120px;
-  border-radius:50%;
-  margin:0 auto 16px;
-  background:linear-gradient(140deg, #1c3f8a 0%, #2a4f9e 100%);
-}
-.about-team-card h4{ font-family:'ATP Pleasurize', serif; font-size:16px; margin-bottom:4px; }
-.about-team-card span{ font-size:13px; color:var(--ink-soft); }
-@media (max-width:860px){
-  .about-row{ grid-template-columns:1fr; gap:28px; margin-bottom:56px; }
-  .about-row-reverse .about-media{ order:1; }
-  .about-row-reverse .about-copy{ order:2; }
-  .about-media{ min-height:220px; }
-}
-
 /* ---------- Product section ---------- */
 .product-section{
   background:var(--offwhite);
