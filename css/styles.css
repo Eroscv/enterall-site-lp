@@ -416,6 +416,11 @@ section{position:relative;}
 .bc-1{ top:4%;   left:2%; }
 .bc-2{ top:42%;  right:-2%; }
 .bc-3{ top:80%;  left:0%; }
+.bc2-1{ top:0%;   left:2%; }
+.bc2-2{ top:19%;  right:0%; }
+.bc2-3{ top:41%;  left:-3%; }
+.bc2-4{ top:64%;  right:-4%; }
+.bc2-5{ top:85%;  left:6%; }
 
 .benefit-card{ transition:transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease); }
 .benefit-carousel-wrap{ display:contents; }
