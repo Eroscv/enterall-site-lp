@@ -270,6 +270,13 @@ if (window.innerWidth <= 1300) {
       nextBtn: document.getElementById('benefitNext2')
     });
   }
+  const benefitCarouselDiff = document.getElementById('benefitCarouselDiff');
+  if (benefitCarouselDiff) {
+    setupAutoplayCarousel(benefitCarouselDiff, {
+      prevBtn: document.getElementById('benefitPrevDiff'),
+      nextBtn: document.getElementById('benefitNextDiff')
+    });
+  }
 }
 
 // Values carousel — infinite arc/coverflow carousel (Voldog-style drag + arrows,
