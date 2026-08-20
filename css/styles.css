@@ -723,6 +723,7 @@ section{position:relative;}
 }
 .line-card-cta:hover{ gap:12px; transform:translateY(-2px); }
 .line-card-max{ background:var(--blue); color:var(--offwhite); }
+.line-card-max h3{ color:var(--offwhite); }
 .line-card-max .line-card-tag{ color:var(--lime); }
 .line-card-max p{ color:rgba(255,252,240,0.78); }
 .line-card-max .line-card-icon{ color:var(--lime); }
