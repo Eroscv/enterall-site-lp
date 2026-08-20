@@ -1,3 +1,21 @@
+// Hero background slides (one per ICP) — auto-crossfade, pauses on manual interaction
+(function(){
+  const slides = Array.from(document.querySelectorAll('.hero-slide'));
+  if (slides.length < 2) return;
+  let i = slides.findIndex(s => s.classList.contains('is-active'));
+  if (i < 0) i = 0;
+  let timer = null;
+  function show(next) {
+    slides[i].classList.remove('is-active');
+    i = next;
+    slides[i].classList.add('is-active');
+  }
+  function play() { stop(); timer = setInterval(() => show((i + 1) % slides.length), 4200); }
+  function stop() { if (timer) clearInterval(timer); timer = null; }
+  play();
+  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else play(); });
+})();
+
 // Nav scroll state
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -41,13 +59,13 @@ revealEls.forEach(el => io.observe(el));
 const bestsellersGrid = document.getElementById('bestsellersGrid');
 if (bestsellersGrid) {
   const products = [
-    { name: 'Bluebox Soy 1.2', bg: '#e8f2df', spec: '1,2 kcal/mL · Baunilha', img: 'assets/images/products/product-1.png', bg: '#e8f2df' },
-    { name: 'Bluebox Fiber 1.2', bg: '#e0eef4', spec: '1,2 kcal/mL · Com fibras', img: 'assets/images/products/product-2.png', bg: '#e0eef4' },
-    { name: 'Bluebox Max 1.2', bg: '#ece3f0', spec: '1,2 kcal/mL · Alta densidade', img: 'assets/images/products/product-3.png', bg: '#ece3f0' },
-    { name: 'Bluebox Max 1.5', bg: '#d3c1e7', spec: '1,5 kcal/mL · Alta densidade', img: 'assets/images/products/product-4.png', bg: '#ece3f0' },
-    { name: 'Intake Basic 1.0', bg: '#c8e0c8', spec: '1,0 kcal/mL · Baunilha', img: 'assets/images/products/product-5.png', bg: '#f4ead2' },
-    { name: 'Intake Basic 1.5', bg: '#b8d8e3', spec: '1,5 kcal/mL · Baunilha', img: 'assets/images/products/product-6.png', bg: '#eef0c9' },
-    { name: 'Bluebox Soy 1.5', bg: '#d3c1e7', spec: '1,5 kcal/mL · Baunilha', img: 'assets/images/products/product-7.png', bg: '#e8f2df' }
+    { name: 'Bluebox Soy 1.2', bg: '#e8f2df', spec: '1,2 kcal/mL · Baunilha', img: 'assets/images/products/product-1.png', url: 'bluebox-soy-1-2.html' },
+    { name: 'Bluebox Fiber 1.2', bg: '#e0eef4', spec: '1,2 kcal/mL · Com fibras', img: 'assets/images/products/product-2.png', url: 'bluebox-fiber-1-2.html' },
+    { name: 'Bluebox Max 1.2', bg: '#ece3f0', spec: '1,2 kcal/mL · Alta densidade', img: 'assets/images/products/product-3.png', url: 'bluebox-max-1-2.html' },
+    { name: 'Bluebox Max 1.5', bg: '#ece3f0', spec: '1,5 kcal/mL · Alta densidade', img: 'assets/images/products/product-4.png', url: 'bluebox-max-1-5-1l.html' },
+    { name: 'Intake Basic 1.0', bg: '#c8e0c8', spec: '1,0 kcal/mL · Baunilha', img: 'assets/images/products/product-5.png', url: 'intake-basic-1-0.html' },
+    { name: 'Intake Basic 1.5', bg: '#b8d8e3', spec: '1,5 kcal/mL · Baunilha', img: 'assets/images/products/product-6.png', url: 'intake-basic-1-5.html' },
+    { name: 'Bluebox Soy 1.5', bg: '#d3c1e7', spec: '1,5 kcal/mL · Baunilha', img: 'assets/images/products/product-7.png', url: 'bluebox-soy-1-5.html' }
   ];
   const lifestyleImg = 'assets/images/lifestyle.jpg';
 
@@ -65,7 +83,7 @@ if (bestsellersGrid) {
           <img src="${p.img}" alt="${p.name}">
         </div>
         <div class="bestseller-info">
-          <h4>${p.name}</h4>
+          <h4>${p.url ? `<a href="${p.url}">${p.name}</a>` : p.name}</h4>
           <span class="bestseller-spec">${p.spec}</span>
           <a href="#contato" class="btn-outline-sm">Solicitar amostra</a>
         </div>
@@ -467,6 +485,61 @@ if (testiCarousel) {
     });
   }, { threshold: 0.1 });
   testiCardEls.forEach(el => testiIo.observe(el));
+}
+
+// Product page reviews carousel (bluebox-max-1-5-1l.html) — same card markup as the
+// main testimonials carousel, but a single static pass (no infinite-loop wrap needed
+// for a single product's review list) with drag-to-scroll.
+const productReviewsCarousel = document.getElementById('productReviewsCarousel');
+if (productReviewsCarousel) {
+  const productReviews = [
+    { initial: 'A', name: 'Ana Paula', pill: 'Cuidadora familiar', quote: '"A troca de fórmula facilitou muito a rotina — a sonda não entope mais como antes."' },
+    { initial: 'F', name: 'Fernando', pill: 'Nutricionista clínico', quote: '"Indico essa fórmula para pacientes que precisam de mais aporte nutricional, com boa tolerância."' },
+    { initial: 'S', name: 'Sandra', pill: 'Enfermeira hospitalar', quote: '"A fluidez na hora de passar pela sonda economiza tempo da equipe em cada plantão."' }
+  ];
+  const prStarSvg = '<svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
+  productReviewsCarousel.innerHTML = productReviews.map(t => `
+    <div class="testi-card">
+      <div class="testi-stars">${prStarSvg.repeat(5)}</div>
+      <p class="testi-quote">${t.quote}</p>
+      <div class="testi-person">
+        <div class="testi-avatar">${t.initial}</div>
+        <div class="name">${t.name}</div>
+      </div>
+      <span class="testi-pill">${t.pill}</span>
+    </div>`).join('');
+
+  let prIsDown = false, prStartX = 0, prStartScroll = 0, prDragged = false;
+  productReviewsCarousel.addEventListener('pointerdown', (e) => {
+    prIsDown = true; prDragged = false;
+    prStartX = e.clientX;
+    prStartScroll = productReviewsCarousel.scrollLeft;
+    productReviewsCarousel.classList.add('is-dragging');
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!prIsDown) return;
+    const dx = e.clientX - prStartX;
+    if (Math.abs(dx) > 4) prDragged = true;
+    productReviewsCarousel.scrollLeft = prStartScroll - dx;
+  });
+  window.addEventListener('pointerup', () => {
+    prIsDown = false;
+    productReviewsCarousel.classList.remove('is-dragging');
+  });
+  productReviewsCarousel.addEventListener('click', (e) => {
+    if (prDragged) { e.preventDefault(); e.stopPropagation(); }
+  }, true);
+
+  const prCardEls = Array.from(productReviewsCarousel.querySelectorAll('.testi-card'));
+  const prIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        prIo.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  prCardEls.forEach(el => prIo.observe(el));
 }
 
 // Gooey two-blob liquid cursor, shared as ONE instance across the values-strip + testimonials

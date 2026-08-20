@@ -32,14 +32,18 @@
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline>
-    <source src="assets/video/hero.mp4" type="video/mp4">
-  </video>
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide hero-slide-medico is-active"><span class="hero-slide-label">Médico</span></div>
+    <div class="hero-slide hero-slide-enfermeiro"><span class="hero-slide-label">Enfermeiro</span></div>
+    <div class="hero-slide hero-slide-nutricionista"><span class="hero-slide-label">Nutricionista</span></div>
+    <div class="hero-slide hero-slide-familiar"><span class="hero-slide-label">Familiar</span></div>
+    <div class="hero-slide hero-slide-paciente"><span class="hero-slide-label">Paciente</span></div>
+  </div>
   <div class="hero-media"></div>
   <div class="wrap hero-content">
     <span class="eyebrow hero-eyebrow">For People, For Patients</span>
-    <h1>Cuidar também é alimentar.</h1>
-    <p class="hero-sub">Nutrição enteral pensada para quem cuida e para quem é cuidado — em casa, no hospital, em cada momento que importa.</p>
+    <h1>A Nutrição Enteral que transforma vidas e cuida de pessoas.</h1>
+    <p class="hero-sub">Praticidade, cuidado e acesso à quem mais precisa.</p>
     <div class="hero-actions">
       <a href="#produto" class="btn btn-primary">Conhecer a fórmula</a>
       <a href="#" class="btn-ghost">
@@ -64,7 +68,8 @@
   </div>
   <div class="wrap">
     <div class="center-head reveal">
-      <h2>Uma fórmula, muitos motivos para confiar</h2>
+      <h2>Para todo caso, Sempre a Melhor Solução</h2>
+      <p>Enterall conta com mais de 10 fórmulas inovadoras, todas respeitando a ciência, e o mais importante, as pessoas.</p>
     </div>
 
     <div class="product-stage">
@@ -75,32 +80,20 @@
         <div class="benefit-carousel" id="benefitCarousel">
           <div class="benefit-card reveal bc-1">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
-            <h4>Fórmula pseudoplástica</h4>
-            <p>Reduz o risco de entupimento da sonda durante a administração.</p>
+            <h4>Concentrado de Proteína Láctea (MPC)</h4>
+            <p>Os mais altos índices de qualidade proteica – valor biológico e PDCAA – documentados na literatura científica.</p>
           </div>
 
           <div class="benefit-card reveal bc-2">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8Z" stroke-linejoin="round"/></svg></div>
-            <h4>Alta densidade energética</h4>
-            <p>Mais nutrição em menos volume, respeitando a rotina do paciente.</p>
+            <h4>Propriedade Pseudoplástica Antientupimento</h4>
+            <p>Fórmula inovadora que comporta-se como sólido em repouso e torna-se líquido ao fluir na sonda, resolvendo complicações com o entupimento.</p>
           </div>
 
           <div class="benefit-card reveal bc-3">
-        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="5" y1="19" x2="19" y2="5"/></svg></div>
-        <h4>Sem lactose</h4>
-        <p>Formulada para melhor tolerância digestiva desde a primeira dose.</p>
-      </div>
-
-      <div class="benefit-card reveal bc-4">
-        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-        <h4>Sabor baunilha suave</h4>
-        <p>Feita para agradar, mesmo quando a rotina é via sonda.</p>
-      </div>
-
-          <div class="benefit-card reveal bc-5">
             <div class="icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
-            <h4>Hospital e home care</h4>
-            <p>Flexível para se adaptar à rotina de cada família.</p>
+            <h4>Amplo portfólio de fórmulas</h4>
+            <p>Formulações para diferentes perfis e necessidades nutricionais, combinando qualidade, eficiência e acessibilidade.</p>
           </div>
         </div>
         <button class="carousel-arrow next benefit-carousel-arrow" id="benefitNext" aria-label="Próximo">
@@ -158,17 +151,47 @@
   <div class="wrap">
     <div class="catalog-header reveal">
       <div>
-        <h2>Nossa linha completa</h2>
-        <p>Fórmulas para cada fase e necessidade do cuidado — do padrão ao especializado, sempre pensadas para simplificar a rotina.</p>
+        <h2>Três linhas fórmulas para todo tratamento</h2>
+        <p>Soluções de excelência nutricional para todos os casos.</p>
       </div>
-      <div class="catalog-nav">
-        <button class="carousel-arrow prev" id="bestsellersPrev" aria-label="Anterior">
-          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="carousel-arrow next" id="bestsellersNext" aria-label="Próximo">
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
+    </div>
+
+    <div class="line-cards">
+      <div class="line-card line-card-max reveal">
+        <div class="line-card-body">
+          <h3>BlueBox Max</h3>
+          <span class="line-card-tag">A melhor fórmula do mercado</span>
+          <p>Linha formulada com proteína concentrada de leite (MPC) – 80% caseína e 20% whey protein.</p>
+        </div>
+        <a href="#bestsellersGrid" class="line-card-cta">Acessar produtos <span aria-hidden="true">→</span></a>
       </div>
+
+      <div class="line-card line-card-soy reveal">
+        <div class="line-card-body">
+          <h3>BlueBox Soy</h3>
+          <span class="line-card-tag">A opção para vegetarianos/veganos</span>
+          <p>Linha formulada com proteína isolada de soja (SPI), que possui mais alto valor biológico e PDCAA entre as proteínas vegetais.</p>
+        </div>
+        <a href="#bestsellersGrid" class="line-card-cta">Acessar produtos <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="line-card line-card-basic reveal">
+        <div class="line-card-body">
+          <h3>Intake Basic</h3>
+          <span class="line-card-tag">Democratizando a nutrição enteral</span>
+          <p>Nutrição especializada acessível, com qualidade e segurança para facilitar a adesão à terapia nutricional enteral.</p>
+        </div>
+        <a href="#bestsellersGrid" class="line-card-cta">Acessar produtos <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="catalog-nav">
+      <button class="carousel-arrow prev" id="bestsellersPrev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="carousel-arrow next" id="bestsellersNext" aria-label="Próximo">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div>
     <div class="bestsellers-grid" id="bestsellersGrid"></div>
   </div>
@@ -210,7 +233,8 @@
 <section class="testi-section" id="historias">
   <div class="wrap">
     <div class="center-head testi-head reveal">
-      <h2>Histórias que a fórmula não conta sozinha</h2>
+      <h2>Cuidado em cada gota. Esperança em cada resultado.</h2>
+      <p>Acreditamos que a excelência é construída ouvindo quem mais importa.</p>
     </div>
 
     <div class="testi-carousel-wrap">
