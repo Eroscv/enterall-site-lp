@@ -1,21 +1,3 @@
-// Hero background slides (one per ICP) — auto-crossfade, pauses on manual interaction
-(function(){
-  const slides = Array.from(document.querySelectorAll('.hero-slide'));
-  if (slides.length < 2) return;
-  let i = slides.findIndex(s => s.classList.contains('is-active'));
-  if (i < 0) i = 0;
-  let timer = null;
-  function show(next) {
-    slides[i].classList.remove('is-active');
-    i = next;
-    slides[i].classList.add('is-active');
-  }
-  function play() { stop(); timer = setInterval(() => show((i + 1) % slides.length), 4200); }
-  function stop() { if (timer) clearInterval(timer); timer = null; }
-  play();
-  document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else play(); });
-})();
-
 // Product page (PDP) gallery thumbnails — click swaps the main image; placeholder
 // thumbs (angles we don't have real photos for yet) swap in a labeled gradient block.
 (function(){
