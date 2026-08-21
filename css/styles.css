@@ -165,6 +165,7 @@ img{max-width:100%; display:block;}
   align-items:flex-end;
   overflow:hidden;
   background:var(--blue);
+  isolation:isolate;
 }
 .hero-video{
   position:absolute; inset:0;
@@ -195,10 +196,11 @@ img{max-width:100%; display:block;}
   padding:0 0 88px;
 }
 .hero-eyebrow{
-  color:var(--lime);
+  color:#fff;
   margin-bottom:22px;
+  mix-blend-mode:difference;
 }
-.hero-eyebrow::before{background:var(--lime);}
+.hero-eyebrow::before{background:#fff; mix-blend-mode:difference;}
 .hero h1{
   font-size:clamp(40px, 6.4vw, 92px);
   color:var(--offwhite);
