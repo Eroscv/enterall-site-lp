@@ -1257,6 +1257,7 @@ section{position:relative;}
 .carousel-arrow{
   position:absolute;
   top:50%; transform:translateY(-50%);
+  touch-action:manipulation;
   width:48px; height:48px;
   border-radius:50%;
   background:var(--offwhite);
@@ -1268,7 +1269,7 @@ section{position:relative;}
   transition:transform .25s var(--ease), background .25s var(--ease);
 }
 .carousel-arrow:hover{ background:var(--lime); transform:translateY(-50%) scale(1.08); }
-.carousel-arrow svg{width:20px; height:20px; stroke:var(--blue); fill:none; stroke-width:2;}
+.carousel-arrow svg{width:20px; height:20px; stroke:var(--blue); fill:none; stroke-width:2; pointer-events:none;}
 .carousel-arrow.prev{ left:12px; }
 .carousel-arrow.next{ right:12px; }
 .carousel-hint{
@@ -1323,7 +1324,7 @@ footer{
   position:relative;
   z-index:2;
   color:rgba(255,252,240,0.75);
-  padding:14px 0;
+  padding:7px 0;
   font-size:12px;
 }
 .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
