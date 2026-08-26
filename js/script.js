@@ -593,6 +593,11 @@ if (valuesSection && testiSectionEl) {
     const inZone = pageY >= top && pageY <= bottom;
     field.classList.toggle('is-active', inZone);
     document.body.classList.toggle('blob-zone-active', inZone);
+
+    const testiTop = testiSectionEl.getBoundingClientRect().top + window.scrollY;
+    const testiBottom = testiSectionEl.getBoundingClientRect().bottom + window.scrollY;
+    const inTesti = pageY >= testiTop && pageY <= testiBottom;
+    field.classList.toggle('in-testi', inTesti);
   });
 
   function animateBlob() {

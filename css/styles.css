@@ -41,7 +41,7 @@ h1,h2,h3,.display{
   line-height:1.02;
   color:var(--ink);
 }
-.hero h1{ font-family:'ATP Pleasurize', serif; font-weight:800; }
+.hero h1{ font-family:'Monoglyphic', sans-serif; font-weight:800; }
 .testi-head h2{ font-family:'ATP Pleasurize', serif; font-weight:800; }
 
 .eyebrow{
@@ -73,7 +73,7 @@ img{max-width:100%; display:block;}
 /* ---------- Nav ---------- */
 .nav{
   position:fixed; top:0; left:0; right:0;
-  z-index:100;
+  z-index:500;
   padding:22px 0;
   transition:background .4s var(--ease), padding .4s var(--ease);
 }
@@ -399,12 +399,37 @@ section{position:relative;}
   z-index:2;
   width:44%;
   aspect-ratio:4/5;
-  object-fit:cover;
   border-radius:16px;
   border:5px solid var(--offwhite);
   box-shadow:0 22px 40px -16px rgba(18,32,69,0.42);
   transform:rotate(3deg);
   animation:productCollageBobAccent 6s ease-in-out infinite .4s;
+}
+.product-collage-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 10px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+.product-collage-card img{
+  width:auto;
+  height:62%;
+  max-width:78%;
+  object-fit:contain;
+  pointer-events:none;
+  user-select:none;
+}
+.product-collage-card span{
+  font-family:'Monoglyphic', sans-serif;
+  font-weight:700;
+  font-size:12.5px;
+  color:var(--ink);
+  text-align:center;
+  line-height:1.2;
 }
 @keyframes productCollageBob{
   0%, 100%{ transform:translateY(0); }
@@ -505,7 +530,7 @@ section{position:relative;}
 .z-line.is-visible{ opacity:1; transform:translateX(0) !important; }
 .z-left{ margin-right:auto; text-align:left; transform:translateX(-26px); }
 .z-right{ margin-left:auto; text-align:right; transform:translateX(26px); }
-.z-hero{ font-size:clamp(28px,4.6vw,52px); }
+.z-hero{ font-size:clamp(28px,4.6vw,52px); font-family:'Monoglyphic', sans-serif; }
 .z-sub{ font-size:clamp(20px,2.8vw,32px); font-family:'Monoglyphic', sans-serif; }
 .drop-placeholder{
   position:absolute;
@@ -562,6 +587,17 @@ section{position:relative;}
   position:relative;
   overflow:hidden;
 }
+.testi-panel{
+  position:relative;
+  z-index:2;
+  background:#fffcf0;
+  border-radius:36px;
+  padding:64px 48px;
+  box-shadow:0 60px 100px -40px rgba(9,17,41,0.55);
+}
+@media (max-width:720px){
+  .testi-panel{ padding:40px 22px; border-radius:24px; }
+}
 .cursor-blob-field{ position:fixed; inset:0; pointer-events:none; z-index:1; filter:url(#testiGoo); opacity:0; transition:opacity .35s var(--ease); }
 .cursor-blob-field.is-active{ opacity:1; }
 .cursor-blob{
@@ -578,10 +614,11 @@ section{position:relative;}
   width:52px; height:52px;
   margin:-26px 0 0 -26px;
 }
-.testi-head{color:var(--offwhite); position:relative; z-index:2;}
-.testi-head .eyebrow{color:var(--lime);}
-.testi-head h2{color:var(--offwhite);}
-.testi-head p{color:rgba(255,252,240,0.75);}
+.cursor-blob-field.in-testi .cursor-blob{ background:var(--blue); }
+.testi-head{color:var(--ink); position:relative; z-index:2;}
+.testi-head .eyebrow{color:var(--blue);}
+.testi-head h2{color:var(--ink);}
+.testi-head p{color:var(--ink-soft);}
 .testi-carousel-wrap{
   position:relative;
   z-index:2;
@@ -677,9 +714,17 @@ section{position:relative;}
   position:relative; z-index:2;
   margin-top:8px;
   font-size:12px;
-  color:rgba(255,252,240,0.45);
+  color:var(--ink-soft);
   max-width:520px;
 }
+
+/* Inverted (negativo) cards inside the "tag over blue" testimonials panel */
+.testi-panel .testi-card{ background:var(--blue); }
+.testi-panel .testi-quote{ color:var(--offwhite); }
+.testi-panel .testi-person .name{ color:var(--offwhite); }
+.testi-panel .testi-avatar{ background:var(--offwhite); color:var(--blue); }
+.testi-panel .testi-pill{ border-color:rgba(255,252,240,0.35); color:var(--offwhite); }
+.testi-panel .testi-card:hover{ box-shadow:0 30px 50px -20px rgba(9,17,41,0.5); }
 
 /* ---------- Product catalog (Kate Farms bestsellers style) ---------- */
 .catalog-section{
@@ -864,6 +909,7 @@ section{position:relative;}
 .values-strip .center-head h2{ color:var(--offwhite); margin-bottom:56px; }
 .values-carousel-wrap{
   position:relative;
+  z-index:1;
   overflow:hidden;
   padding:40px 0 10px;
 }
