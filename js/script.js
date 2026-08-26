@@ -719,10 +719,14 @@ if (introBento) {
     return first.getBoundingClientRect().width + parseFloat(style.gap || 16);
   }
   function introUpdateDots() {
-    if (!introDots.length) return;
-    const step = introStep();
-    const idx = Math.round(introBento.scrollLeft / step);
-    introDots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
+    const maxScroll = introBento.scrollWidth - introBento.clientWidth;
+    if (introDots.length) {
+      const step = introStep();
+      const idx = Math.round(introBento.scrollLeft / step);
+      introDots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
+    }
+    if (introPrev) introPrev.disabled = introBento.scrollLeft <= 4;
+    if (introNext) introNext.disabled = introBento.scrollLeft >= maxScroll - 4;
   }
   introPrev?.addEventListener('click', () => {
     introBento.scrollLeft = Math.max(0, introBento.scrollLeft - introStep());
@@ -731,6 +735,7 @@ if (introBento) {
     introBento.scrollLeft = Math.min(introBento.scrollWidth, introBento.scrollLeft + introStep());
   });
   introBento.addEventListener('scroll', introUpdateDots, { passive: true });
+  introUpdateDots();
 }
 
 
