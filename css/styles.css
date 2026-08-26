@@ -22,6 +22,9 @@
   --radius-lg:32px;
   --radius-full:999px;
   --ease:cubic-bezier(.16,1,.3,1);
+  --cyan:#2f8fc9;
+  --green-ok:#1f9d6c;
+  --surface:#f6f8fa;
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -1670,4 +1673,331 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 /* ---------- Testimonials spotlight ---------- */
 @media (prefers-reduced-motion: reduce){
   *{animation-duration:0.001s !important; animation-iteration-count:1 !important; transition-duration:0.2s !important;}
+}
+
+/* ================================================================
+   Line Hub (bluebox-max.html) — healthcare premium redesign
+   Scoped entirely to .lhub-* classes, used only on this page.
+   ================================================================ */
+
+/* --- Hero --- */
+.lhub-hero{
+  background:
+    radial-gradient(ellipse 60% 50% at 85% 15%, rgba(28,63,138,0.06), transparent 60%),
+    var(--offwhite);
+  padding:150px 0 90px;
+}
+@media (max-width:860px){ .lhub-hero{ padding:120px 0 60px; } }
+.lhub-hero-grid{
+  display:grid;
+  grid-template-columns:1fr 0.9fr;
+  gap:56px;
+  align-items:center;
+  margin-top:28px;
+}
+@media (max-width:960px){ .lhub-hero-grid{ grid-template-columns:1fr; gap:40px; } }
+.lhub-eyebrow{
+  display:inline-block;
+  font-family:'Monoglyphic', sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--cyan);
+  margin-bottom:14px;
+}
+.lhub-hero-text h1{
+  font-size:clamp(38px,5vw,58px);
+  color:var(--ink);
+  margin-bottom:10px;
+  line-height:1.05;
+}
+.lhub-hero-sub{
+  font-family:'Monoglyphic', sans-serif;
+  font-weight:700;
+  font-size:18px;
+  color:var(--cyan);
+  margin-bottom:18px;
+}
+.lhub-hero-lead{
+  font-size:16px;
+  line-height:1.65;
+  color:var(--ink-soft);
+  font-weight:300;
+  max-width:46ch;
+  margin-bottom:32px;
+}
+.lhub-hero-shot{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:380px;
+}
+.lhub-hero-glow{
+  position:absolute;
+  inset:0;
+  background:radial-gradient(ellipse 60% 60% at center, rgba(28,63,138,0.10), transparent 70%);
+  filter:blur(10px);
+}
+.lhub-hero-shot img{
+  position:relative;
+  height:380px;
+  width:auto;
+  object-fit:contain;
+  filter:drop-shadow(0 40px 50px rgba(18,32,69,0.28));
+}
+@media (max-width:960px){ .lhub-hero-shot img{ height:300px; } .lhub-hero-shot{ min-height:300px; } }
+.lhub-hero-badge{
+  position:absolute;
+  bottom:8%;
+  right:6%;
+  background:var(--offwhite);
+  border:1px solid rgba(28,63,138,0.12);
+  border-radius:var(--radius-full);
+  padding:9px 18px;
+  font-family:'Monoglyphic', sans-serif;
+  font-weight:700;
+  font-size:13px;
+  color:var(--ink);
+  box-shadow:0 14px 30px -14px rgba(18,32,69,0.3);
+}
+
+/* --- Positioning / editorial --- */
+.lhub-position{ background:var(--offwhite); }
+.lhub-position .center-head{ max-width:760px; margin-bottom:40px; }
+.lhub-quote{
+  max-width:820px;
+  margin:0 auto 36px;
+  padding-left:26px;
+  border-left:3px solid var(--cyan);
+  font-size:clamp(19px,2.2vw,24px);
+  line-height:1.5;
+  font-style:italic;
+  color:var(--ink);
+  font-weight:500;
+}
+.lhub-chips{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+.lhub-chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 18px;
+  border-radius:var(--radius-full);
+  font-family:'Monoglyphic', sans-serif;
+  font-weight:700;
+  font-size:14px;
+  color:var(--ink);
+  background:var(--surface);
+  border:1px solid rgba(28,63,138,0.1);
+}
+.lhub-chip em{ font-style:normal; font-weight:400; color:var(--ink-soft); font-size:12.5px; }
+.lhub-chip-tolerance{ border-color:rgba(28,63,138,0.25); }
+.lhub-chip-restriction{ border-color:rgba(47,143,201,0.3); }
+.lhub-chip-access{ border-color:rgba(31,157,108,0.3); }
+
+/* --- Line cards --- */
+.lhub-cards-section{ background:var(--offwhite); }
+.lhub-cards{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:26px;
+}
+@media (max-width:960px){ .lhub-cards{ grid-template-columns:1fr; } }
+.lhub-card{
+  background:var(--surface);
+  border:1px solid rgba(28,63,138,0.08);
+  border-radius:24px;
+  padding:34px 30px;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+  box-shadow:0 20px 40px -30px rgba(18,32,69,0.15);
+}
+.lhub-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 30px 50px -24px rgba(18,32,69,0.22);
+}
+.lhub-card-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+.lhub-card-num{
+  font-family:'Monoglyphic', sans-serif;
+  font-weight:800;
+  font-size:13px;
+  color:rgba(18,32,69,0.28);
+  letter-spacing:0.05em;
+}
+.lhub-card-cat{
+  font-size:11.5px;
+  font-weight:700;
+  padding:5px 12px;
+  border-radius:var(--radius-full);
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+}
+.lhub-cat-tolerance{ background:rgba(28,63,138,0.1); color:var(--blue); }
+.lhub-cat-restriction{ background:rgba(47,143,201,0.12); color:var(--cyan); }
+.lhub-cat-access{ background:rgba(31,157,108,0.12); color:var(--green-ok); }
+.lhub-card h3{ font-size:24px; margin-bottom:2px; }
+.lhub-card h3 a{ color:inherit; text-decoration:none; border-bottom:1px solid rgba(28,63,138,0.25); }
+.lhub-card h3 a:hover{ border-color:var(--blue); }
+.lhub-versions{ display:block; font-size:12.5px; color:var(--ink-soft); margin-bottom:16px; }
+.lhub-desc{ font-size:14px; line-height:1.6; color:var(--ink-soft); font-weight:300; margin-bottom:26px; }
+.lhub-stats{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:10px;
+  margin-bottom:24px;
+  padding-bottom:24px;
+  border-bottom:1px solid rgba(28,63,138,0.1);
+}
+.lhub-stat{ display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+.lhub-stat-icon{ width:18px; height:18px; stroke:var(--cyan); fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.lhub-stat-icon.lhub-icon-ok{ stroke:var(--green-ok); }
+.lhub-stat strong{ font-family:'Monoglyphic', sans-serif; font-size:20px; font-weight:800; color:var(--ink); line-height:1.1; }
+.lhub-stat span{ font-size:11px; color:var(--ink-soft); line-height:1.3; }
+.lhub-list{ list-style:none; margin-bottom:20px; }
+.lhub-list li{
+  position:relative;
+  padding-left:24px;
+  font-size:13.5px;
+  color:var(--ink-soft);
+  margin-bottom:9px;
+  line-height:1.45;
+}
+.lhub-list li::before{
+  content:'';
+  position:absolute; left:0; top:5px;
+  width:12px; height:12px;
+  border-radius:50%;
+  background:rgba(31,157,108,0.15);
+  box-shadow:inset 0 0 0 1.6px var(--green-ok);
+}
+.lhub-alert{
+  font-size:12.5px;
+  color:var(--ink-soft);
+  padding:12px 14px;
+  background:rgba(199,230,57,0.12);
+  border-left:2px solid var(--lime-deep);
+  border-radius:0 10px 10px 0;
+}
+.lhub-alert strong{ color:var(--ink); }
+
+/* --- Technical comparison table --- */
+.lhub-table-section{ background:var(--offwhite); }
+.lhub-table-wrap{
+  overflow-x:auto;
+  border:1px solid rgba(28,63,138,0.1);
+  border-radius:24px;
+}
+.lhub-table{ width:100%; border-collapse:collapse; min-width:640px; }
+.lhub-table th, .lhub-table td{
+  text-align:center;
+  padding:16px 14px;
+  border-bottom:1px solid rgba(28,63,138,0.08);
+  font-size:14px;
+  color:var(--ink-soft);
+  transition:background .15s var(--ease);
+}
+.lhub-table-fixed{
+  position:sticky; left:0;
+  text-align:left !important;
+  background:var(--surface);
+  color:var(--ink-soft);
+  font-size:13.5px;
+  z-index:1;
+}
+.lhub-table thead th{
+  font-family:'Monoglyphic', sans-serif;
+  font-size:16px;
+  font-weight:700;
+  color:var(--ink);
+  padding-top:22px;
+  background:var(--surface);
+}
+.lhub-table thead th.lhub-table-fixed{ background:var(--surface); }
+.lhub-table thead th a{ color:inherit; text-decoration:none; border-bottom:1px solid rgba(28,63,138,0.25); }
+.lhub-table thead th a:hover{ border-color:var(--blue); }
+.lhub-table thead th span{ display:block; font-size:11.5px; font-weight:400; color:var(--ink-soft); margin-top:4px; }
+.lhub-table tbody tr:last-child td{ border-bottom:none; }
+.lhub-num{ font-weight:700; color:var(--ink); }
+.lhub-table .ct{ font-size:16px; font-weight:700; }
+.lhub-table .ct-yes{ color:var(--green-ok); }
+.lhub-table .ct-no{ color:rgba(58,74,114,0.35); }
+.lhub-table td.is-col-active, .lhub-table th.is-col-active{ background:rgba(47,143,201,0.06); }
+.lhub-warning{
+  margin-top:22px;
+  padding:16px 20px;
+  background:rgba(199,230,57,0.14);
+  border:1px solid rgba(159,168,36,0.28);
+  border-radius:14px;
+  font-size:12.5px;
+  color:var(--ink-soft);
+  text-align:center;
+}
+@media (max-width:960px){ .lhub-table-wrap{ border-radius:16px; } }
+
+/* --- Product catalog cards --- */
+.lhub-products-section{ background:var(--offwhite); }
+.lhub-products{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:22px;
+}
+.lhub-products-4{ grid-template-columns:repeat(4, 1fr); }
+@media (max-width:960px){ .lhub-products-4{ grid-template-columns:repeat(2, 1fr); } }
+@media (max-width:600px){ .lhub-products, .lhub-products-4{ grid-template-columns:1fr; } }
+.lhub-product-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  background:var(--surface);
+  border:1px solid rgba(28,63,138,0.08);
+  border-radius:22px;
+  padding:32px 24px 26px;
+  text-decoration:none;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+  box-shadow:0 16px 34px -28px rgba(18,32,69,0.18);
+}
+.lhub-product-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 26px 44px -22px rgba(18,32,69,0.24);
+}
+.lhub-product-badge{
+  align-self:flex-start;
+  font-size:11px;
+  font-weight:700;
+  color:var(--cyan);
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  margin-bottom:14px;
+}
+.lhub-product-media{ height:180px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.lhub-product-media img{ height:100%; width:auto; object-fit:contain; filter:drop-shadow(0 20px 24px rgba(18,32,69,0.18)); }
+.lhub-product-card h4{ font-size:18px; color:var(--ink); margin-bottom:4px; }
+.lhub-product-meta{ display:block; font-size:12.5px; color:var(--ink-soft); margin-bottom:18px; }
+.lhub-product-cta{
+  font-family:'Monoglyphic', sans-serif;
+  font-size:13.5px;
+  font-weight:700;
+  color:var(--blue);
+  transition:transform .2s var(--ease);
+}
+.lhub-product-card:hover .lhub-product-cta{ transform:translateX(4px); }
+
+/* --- Focus-visible reinforcement --- */
+.lhub-product-card:focus-visible,
+.lhub-card h3 a:focus-visible,
+.lhub-table thead th a:focus-visible{
+  outline:2px solid var(--cyan);
+  outline-offset:3px;
 }

@@ -733,3 +733,26 @@ if (introBento) {
   introBento.addEventListener('scroll', introUpdateDots, { passive: true });
 }
 
+
+// Line hub comparison table (bluebox-max.html) — column highlight on hover
+const lhubTable = document.getElementById('lhubTable');
+if (lhubTable) {
+  const lhubRows = Array.from(lhubTable.querySelectorAll('tr'));
+  lhubTable.querySelectorAll('td, th').forEach((cell, _i, all) => {
+    cell.addEventListener('mouseenter', () => {
+      const colIndex = Array.from(cell.parentElement.children).indexOf(cell);
+      if (colIndex === 0) return;
+      lhubRows.forEach(row => {
+        const target = row.children[colIndex];
+        if (target) target.classList.add('is-col-active');
+      });
+    });
+    cell.addEventListener('mouseleave', () => {
+      const colIndex = Array.from(cell.parentElement.children).indexOf(cell);
+      lhubRows.forEach(row => {
+        const target = row.children[colIndex];
+        if (target) target.classList.remove('is-col-active');
+      });
+    });
+  });
+}
