@@ -597,10 +597,10 @@ section{position:relative;}
 .formula-head{ margin-bottom:40px; }
 .formula-head h2{ font-size:clamp(30px,4vw,46px); margin-bottom:16px; }
 .formula-head p{ color:var(--ink-soft); font-size:16px; font-weight:300; max-width:44ch; }
-.formula-item{ display:flex; gap:20px; align-items:flex-start; margin-bottom:36px; }
+.formula-item{ display:block; margin-bottom:36px; }
 .formula-item:last-child{ margin-bottom:0; }
 .formula-item .value-icon{ flex-shrink:0; margin:0; }
-.formula-item h4{ font-family:'Monoglyphic', sans-serif; font-weight:700; font-size:19px; margin-bottom:8px; }
+.formula-item h4{ font-family:'Monoglyphic', sans-serif; font-weight:700; font-size:19px; margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid rgba(28,63,138,0.12); }
 .formula-item p{ font-size:14.5px; line-height:1.6; color:var(--ink-soft); font-weight:300; }
 .formula-media{ display:flex; justify-content:center; }
 @media (max-width:960px){
