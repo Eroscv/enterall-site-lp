@@ -1033,7 +1033,7 @@ footer{
   position:relative;
   z-index:2;
   color:var(--ink-soft);
-  padding:40px 0;
+  padding:88px 0;
   font-size:12px;
 }
 .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
