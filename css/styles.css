@@ -615,7 +615,7 @@ section{position:relative;}
   margin:-26px 0 0 -26px;
 }
 .cursor-blob-field.in-testi .cursor-blob{ background:var(--blue); }
-.testi-head{color:var(--offwhite); position:relative; z-index:2; margin-bottom:48px;}
+.testi-head{color:var(--offwhite); position:relative; z-index:2; margin-bottom:48px; max-width:880px;}
 .testi-head .eyebrow{color:var(--lime);}
 .testi-head h2{color:var(--offwhite);}
 .testi-head p{color:rgba(255,252,240,0.75);}
