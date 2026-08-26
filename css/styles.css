@@ -1343,11 +1343,12 @@ footer{
   position:relative;
   z-index:2;
   color:rgba(255,252,240,0.75);
-  padding:7px 0;
-  font-size:12px;
+  padding:3px 0;
+  font-size:11px;
+  line-height:1.2;
 }
-.footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
-.footer-links{display:flex; gap:22px; list-style:none;}
+.footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+.footer-links{display:flex; gap:14px; list-style:none;}
 .footer-links a{color:rgba(255,252,240,0.75); text-decoration:none;}
 .footer-links a:hover{color:var(--lime);}
 
