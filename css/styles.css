@@ -467,10 +467,46 @@ section{position:relative;}
     border:1px solid rgba(28,63,138,0.10);
     border-radius:13px;
     box-shadow:0 10px 20px -18px rgba(18,32,69,0.16);
+    display:flex;
+    flex-direction:column;
   }
-  .intro-card-shot img{ height:170px; }
-  .intro-card h3{ font-size:19px; }
-  .intro-card p{ font-size:14.5px; }
+  .intro-card-icon{
+    width:38px; height:38px;
+    padding:9px;
+    box-sizing:border-box;
+    background:linear-gradient(155deg, rgba(28,63,138,0.10), rgba(28,63,138,0.04));
+    border-radius:11px;
+    stroke-width:1.5;
+    margin-bottom:14px;
+  }
+  .intro-card h3{
+    font-size:18.5px;
+    line-height:1.28;
+    letter-spacing:-0.01em;
+    margin-bottom:8px;
+  }
+  .intro-card p{
+    font-size:14px;
+    line-height:1.5;
+    color:var(--ink-soft);
+  }
+  .intro-card-text{ display:flex; flex-direction:column; }
+  .intro-card-formula{ padding:0; overflow:hidden; }
+  .intro-card-formula .intro-card-text{ padding:24px 22px 0; }
+  .intro-card-formula .intro-card-shot{
+    margin-top:16px;
+    background:linear-gradient(180deg, rgba(28,63,138,0.05), rgba(28,63,138,0));
+    padding-top:14px;
+  }
+  .intro-card-shot img{ height:158px; }
+  .intro-badges{ gap:7px; margin-top:16px; }
+  .intro-badge{ padding:9px 6px; border-radius:10px; font-size:13.5px; }
+  .intro-badge small{ font-size:9.5px; }
+  .intro-pills{ gap:5px; margin-top:16px; }
+  .intro-pills span{ padding:4.5px 9px; font-size:11px; }
+  .intro-number{ font-size:38px; margin-top:14px; }
+  .intro-number-sub{ margin-top:3px; }
+  .intro-card-ready{ justify-content:flex-start; }
   .intro-bento-wrap{ display:flex; flex-direction:column; }
   .intro-bento-nav{
     order:2;
