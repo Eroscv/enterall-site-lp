@@ -416,11 +416,27 @@ section{position:relative;}
   .intro-editorial{ padding-top:80px; }
   .intro-head{ margin-bottom:48px; }
   .intro-head h2{ font-size:clamp(26px,7vw,34px); }
-  .intro-bento{ grid-template-columns:1fr; grid-template-rows:none; gap:16px; }
-  .intro-card-formula, .intro-card-precision, .intro-card-vitamins, .intro-card-portfolio, .intro-card-ready{
-    grid-column:1; grid-row:auto;
+  .intro-bento{
+    display:flex;
+    grid-template-columns:none;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    gap:16px;
+    padding:4px 4px 12px;
+    margin:0 -20px;
+    padding-left:20px;
+    padding-right:20px;
+    scrollbar-width:none;
   }
-  .intro-card-shot img{ height:200px; }
+  .intro-bento::-webkit-scrollbar{ display:none; }
+  .intro-card-formula, .intro-card-precision, .intro-card-vitamins, .intro-card-portfolio, .intro-card-ready{
+    grid-column:auto; grid-row:auto;
+    flex:0 0 88vw;
+    scroll-snap-align:center;
+    min-height:340px;
+  }
+  .intro-card-formula{ min-height:420px; }
+  .intro-card-shot img{ height:220px; }
 }
 
 /* ---------- Product section ---------- */
