@@ -848,7 +848,7 @@ section{position:relative;}
 @media (max-width:900px){
   .testi-panel{ padding:70px 0 56px; }
 }
-.cursor-blob-field{ position:fixed; inset:0; pointer-events:none; z-index:1; filter:url(#testiGoo); opacity:0; transition:opacity .35s var(--ease); }
+.cursor-blob-field{ position:fixed; inset:0; pointer-events:none; z-index:10; filter:url(#testiGoo); opacity:0; transition:opacity .35s var(--ease); }
 .cursor-blob-field.is-active{ opacity:1; }
 .cursor-blob{
   position:fixed;
