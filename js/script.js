@@ -72,15 +72,14 @@ if (bestsellersGrid) {
     { name: 'Intake Basic 1.5', bg: '#b8d8e3', spec: '1,5 kcal/mL · Baunilha', img: 'assets/images/products/product-6.png', url: 'intake-basic-1-5.html' },
     { name: 'Bluebox Soy 1.5', bg: '#d3c1e7', spec: '1,5 kcal/mL · Baunilha', img: 'assets/images/products/product-7.png', url: 'bluebox-soy-1-5.html' }
   ];
-  const lifestyleImg = 'assets/images/lifestyle.jpg';
-
   let startIndex = 0;
 
   function renderGrid() {
     const shown = [
       products[startIndex % products.length],
       products[(startIndex + 1) % products.length],
-      products[(startIndex + 2) % products.length]
+      products[(startIndex + 2) % products.length],
+      products[(startIndex + 3) % products.length]
     ];
     const cardsHtml = shown.map(p => `
       <div class="bestseller-card" style="background:${p.bg}">
@@ -94,8 +93,7 @@ if (bestsellersGrid) {
         </div>
       </div>
     `).join('');
-    const photoHtml = `<div class="bestseller-photo" style="background-image:url('${lifestyleImg}')" aria-label="Enterall no dia a dia"></div>`;
-    bestsellersGrid.innerHTML = cardsHtml + photoHtml;
+    bestsellersGrid.innerHTML = cardsHtml;
 
     const els = Array.from(bestsellersGrid.querySelectorAll('.bestseller-card, .bestseller-photo'));
     requestAnimationFrame(() => {
