@@ -62,12 +62,23 @@
     </div>
 
     <div class="intro-bento-wrap">
-      <button class="carousel-arrow prev" id="introPrev" aria-label="Anterior">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="carousel-arrow next" id="introNext" aria-label="Próximo">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
+      <div class="intro-bento-nav">
+        <div class="intro-bento-dots" id="introDots">
+          <span class="intro-dot is-active"></span>
+          <span class="intro-dot"></span>
+          <span class="intro-dot"></span>
+          <span class="intro-dot"></span>
+          <span class="intro-dot"></span>
+        </div>
+        <div class="intro-bento-arrows">
+          <button class="intro-bento-arrow prev" id="introPrev" aria-label="Anterior">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="intro-bento-arrow next" id="introNext" aria-label="Próximo">
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
       <div class="intro-bento" id="introBento">
       <div class="intro-card intro-card-formula reveal">
         <div class="intro-card-text">

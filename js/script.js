@@ -706,10 +706,11 @@ if (window.matchMedia('(pointer: fine)').matches) {
   });
 }
 
-// Editorial intro bento carousel arrows (mobile)
+// Editorial intro bento carousel arrows + dots (mobile)
 const introBento = document.getElementById('introBento');
 const introPrev = document.getElementById('introPrev');
 const introNext = document.getElementById('introNext');
+const introDots = document.querySelectorAll('#introDots .intro-dot');
 if (introBento) {
   function introStep() {
     const first = introBento.firstElementChild;
@@ -717,11 +718,18 @@ if (introBento) {
     const style = getComputedStyle(introBento);
     return first.getBoundingClientRect().width + parseFloat(style.gap || 16);
   }
+  function introUpdateDots() {
+    if (!introDots.length) return;
+    const step = introStep();
+    const idx = Math.round(introBento.scrollLeft / step);
+    introDots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
+  }
   introPrev?.addEventListener('click', () => {
     introBento.scrollLeft = Math.max(0, introBento.scrollLeft - introStep());
   });
   introNext?.addEventListener('click', () => {
     introBento.scrollLeft = Math.min(introBento.scrollWidth, introBento.scrollLeft + introStep());
   });
+  introBento.addEventListener('scroll', introUpdateDots, { passive: true });
 }
 
