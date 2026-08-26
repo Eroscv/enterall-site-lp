@@ -1303,8 +1303,7 @@ section{position:relative;}
 /* ---------- Final CTA ---------- */
 .final-cta{
   color:var(--offwhite);
-  padding:100px 0;
-  min-height:80vh;
+  padding:64px 0 32px;
   display:flex;
   align-items:center;
   justify-content:center;
