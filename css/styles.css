@@ -590,6 +590,7 @@ section{position:relative;}
 .testi-panel{
   position:relative;
   z-index:2;
+  max-width:1760px;
   background:#fffcf0;
   border-radius:36px;
   padding:64px 48px;
