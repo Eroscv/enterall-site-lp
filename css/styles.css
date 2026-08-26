@@ -765,7 +765,7 @@ section{position:relative;}
 .line-card-soy .line-card-icon{ background:rgba(28,63,138,0.12); color:var(--blue); }
 .line-card-soy .line-card-cta{ color:var(--offwhite); background:var(--blue); }
 .line-card-soy .line-card-cta:hover{ background:#16305f; }
-.line-card-basic{ background:var(--cream); color:var(--ink); }
+.line-card-basic{ background:#fffcf0; color:var(--ink); }
 .line-card-basic .line-card-tag{ color:var(--blue); }
 .line-card-basic p{ color:var(--ink-soft); }
 .line-card-basic .line-card-icon{ background:rgba(28,63,138,0.12); color:var(--blue); }
