@@ -583,22 +583,21 @@ section{position:relative;}
 /* ---------- Testimonials ---------- */
 .testi-section{
   background:var(--blue);
-  padding:90px 0 60px;
+  padding:0;
   position:relative;
   overflow:hidden;
 }
 .testi-panel{
   position:relative;
   z-index:2;
-  max-width:96vw;
-  margin-top:-220px;
+  width:100%;
   background:#fffcf0;
-  border-radius:36px;
-  padding:120px 48px 96px;
-  box-shadow:0 60px 100px -40px rgba(9,17,41,0.55);
+  padding:110px 0 90px;
+  box-shadow:0 40px 90px -50px rgba(9,17,41,0.5);
 }
+.testi-panel .wrap{ position:relative; }
 @media (max-width:900px){
-  .testi-panel{ margin-top:-120px; padding:80px 22px 56px; border-radius:24px; }
+  .testi-panel{ padding:70px 0 56px; }
 }
 .cursor-blob-field{ position:fixed; inset:0; pointer-events:none; z-index:1; filter:url(#testiGoo); opacity:0; transition:opacity .35s var(--ease); }
 .cursor-blob-field.is-active{ opacity:1; }
