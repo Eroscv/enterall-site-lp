@@ -334,6 +334,8 @@ section{position:relative;}
   margin-right:auto;
 }
 
+.intro-bento-wrap{ position:relative; }
+.intro-bento-wrap .carousel-arrow{ display:none; }
 .intro-bento{
   display:grid;
   grid-template-columns:1.05fr 0.85fr 0.85fr;
@@ -438,6 +440,13 @@ section{position:relative;}
   }
   .intro-card-formula{ min-height:420px; }
   .intro-card-shot img{ height:270px; }
+  .intro-bento-wrap .carousel-arrow{
+    display:flex;
+    top:50%;
+    width:40px; height:40px;
+  }
+  .intro-bento-wrap .carousel-arrow.prev{ left:0; }
+  .intro-bento-wrap .carousel-arrow.next{ right:0; }
   .intro-bento .reveal{ opacity:1 !important; transform:none !important; }
 }
 

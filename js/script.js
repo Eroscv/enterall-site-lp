@@ -706,3 +706,22 @@ if (window.matchMedia('(pointer: fine)').matches) {
   });
 }
 
+// Editorial intro bento carousel arrows (mobile)
+const introBento = document.getElementById('introBento');
+const introPrev = document.getElementById('introPrev');
+const introNext = document.getElementById('introNext');
+if (introBento) {
+  function introStep() {
+    const first = introBento.firstElementChild;
+    if (!first) return introBento.clientWidth;
+    const style = getComputedStyle(introBento);
+    return first.getBoundingClientRect().width + parseFloat(style.gap || 16);
+  }
+  introPrev?.addEventListener('click', () => {
+    introBento.scrollLeft = Math.max(0, introBento.scrollLeft - introStep());
+  });
+  introNext?.addEventListener('click', () => {
+    introBento.scrollLeft = Math.min(introBento.scrollWidth, introBento.scrollLeft + introStep());
+  });
+}
+
