@@ -438,6 +438,7 @@ section{position:relative;}
   }
   .intro-card-formula{ min-height:420px; }
   .intro-card-shot img{ height:270px; }
+  .intro-bento .reveal{ opacity:1 !important; transform:none !important; }
 }
 
 /* ---------- Lines comparison ---------- */
