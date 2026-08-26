@@ -1313,7 +1313,7 @@ footer{
   position:relative;
   z-index:2;
   color:rgba(255,252,240,0.75);
-  padding:24px 0;
+  padding:14px 0;
   font-size:12px;
 }
 .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
