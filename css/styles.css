@@ -583,7 +583,7 @@ section{position:relative;}
 /* ---------- Testimonials ---------- */
 .testi-section{
   background:var(--blue);
-  padding:90px 0 160px;
+  padding:90px 0 60px;
   position:relative;
   overflow:hidden;
 }
@@ -902,7 +902,7 @@ section{position:relative;}
 /* ---------- Values strip (Bucks Sauce style scroll-stack) ---------- */
 .values-strip{
   background:var(--blue);
-  padding:120px 0 70px;
+  padding:120px 0 40px;
   position:relative;
   overflow:hidden;
 }
