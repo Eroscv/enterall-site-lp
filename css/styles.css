@@ -998,6 +998,10 @@ section{position:relative;}
 .final-cta{
   color:var(--offwhite);
   padding:100px 0;
+  min-height:520px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
   position:relative;
   z-index:2;
