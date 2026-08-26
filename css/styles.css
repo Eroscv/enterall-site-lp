@@ -1614,7 +1614,7 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 }
 .pdp-selector-opt.is-active{ border-color:var(--blue); background:var(--blue); color:var(--offwhite); }
 
-.pdp-related{ background:var(--cream); }
+.pdp-related{ background:var(--cream); padding-top:64px; padding-bottom:64px; }
 .pdp-related-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:22px; }
 .pdp-related-card{
   display:flex; align-items:center; gap:16px;
