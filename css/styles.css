@@ -308,7 +308,7 @@ section{position:relative;}
 .intro-editorial{
   background:var(--offwhite);
   padding-top:132px;
-  padding-bottom:132px;
+  padding-bottom:64px;
 }
 .intro-head{
   max-width:760px;
@@ -441,7 +441,7 @@ section{position:relative;}
 }
 
 /* ---------- Lines comparison ---------- */
-.lines-compare{ background:var(--offwhite); padding-top:132px; padding-bottom:132px; }
+.lines-compare{ background:var(--offwhite); padding-top:64px; padding-bottom:64px; }
 .lines-compare .btn{ margin-top:28px; }
 .lines-compare .center-head{ max-width:720px; }
 
@@ -563,8 +563,8 @@ section{position:relative;}
   background:var(--offwhite);
   position:relative;
   overflow:hidden;
-  padding-top:132px;
-  padding-bottom:132px;
+  padding-top:64px;
+  padding-bottom:64px;
 }
 @media (max-width:700px){ .product-section{ padding-top:100px; } }
 .fluid-ribbon{
@@ -1006,7 +1006,7 @@ section{position:relative;}
 /* ---------- Product catalog (Kate Farms bestsellers style) ---------- */
 .catalog-section{
   background:var(--offwhite);
-  padding:132px 0;
+  padding:64px 0;
   position:relative;
 }
 .catalog-header{
