@@ -545,14 +545,14 @@ section{position:relative;}
 }
 .drop-placeholder.is-visible{ opacity:1; }
 .drop-placeholder img{ width:100%; height:100%; display:block; object-fit:cover; }
-.ph-tl{ top:10px; left:-420px; width:350px; height:260px; transform:translateY(34px) rotate(-7deg) scale(var(--drop-scale,1)); }
-.ph-tl.is-visible{ transform:translateY(0) rotate(-7deg) scale(var(--drop-scale,1)); }
-.ph-tr{ top:210px; right:-440px; width:390px; height:280px; transform:translateY(34px) rotate(9deg) scale(var(--drop-scale,1)); }
-.ph-tr.is-visible{ transform:translateY(0) rotate(9deg) scale(var(--drop-scale,1)); }
-.ph-bl{ top:440px; left:-440px; width:380px; height:275px; transform:translateY(34px) rotate(10deg) scale(var(--drop-scale,1)); }
-.ph-bl.is-visible{ transform:translateY(0) rotate(10deg) scale(var(--drop-scale,1)); }
-.ph-br{ top:590px; right:-440px; width:380px; height:275px; transform:translateY(34px) rotate(-8deg) scale(var(--drop-scale,1)); }
-.ph-br.is-visible{ transform:translateY(0) rotate(-8deg) scale(var(--drop-scale,1)); }
+.ph-tl{ top:10px; left:-420px; width:350px; height:260px; transform:translateY(34px) scale(var(--drop-scale,1)); }
+.ph-tl.is-visible{ transform:translateY(0) scale(var(--drop-scale,1)); }
+.ph-tr{ top:210px; right:-440px; width:390px; height:280px; transform:translateY(34px) scale(var(--drop-scale,1)); }
+.ph-tr.is-visible{ transform:translateY(0) scale(var(--drop-scale,1)); }
+.ph-bl{ top:440px; left:-440px; width:380px; height:275px; transform:translateY(34px) scale(var(--drop-scale,1)); }
+.ph-bl.is-visible{ transform:translateY(0) scale(var(--drop-scale,1)); }
+.ph-br{ top:590px; right:-440px; width:380px; height:275px; transform:translateY(34px) scale(var(--drop-scale,1)); }
+.ph-br.is-visible{ transform:translateY(0) scale(var(--drop-scale,1)); }
 .gota-marquee{
   display:none;
   overflow:hidden;
@@ -615,10 +615,10 @@ section{position:relative;}
   margin:-26px 0 0 -26px;
 }
 .cursor-blob-field.in-testi .cursor-blob{ background:var(--blue); }
-.testi-head{color:var(--ink); position:relative; z-index:2;}
-.testi-head .eyebrow{color:var(--blue);}
-.testi-head h2{color:var(--ink);}
-.testi-head p{color:var(--ink-soft);}
+.testi-head{color:var(--offwhite); position:relative; z-index:2; margin-bottom:48px;}
+.testi-head .eyebrow{color:var(--lime);}
+.testi-head h2{color:var(--offwhite);}
+.testi-head p{color:rgba(255,252,240,0.75);}
 .testi-carousel-wrap{
   position:relative;
   z-index:2;
