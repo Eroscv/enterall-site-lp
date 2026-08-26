@@ -309,9 +309,9 @@ section{position:relative;}
   background:var(--offwhite);
   position:relative;
   overflow:hidden;
-  padding-top:460px;
+  padding-top:140px;
 }
-@media (max-width:700px){ .product-section{ padding-top:200px; } }
+@media (max-width:700px){ .product-section{ padding-top:100px; } }
 .fluid-ribbon{
   position:absolute;
   inset:0;
