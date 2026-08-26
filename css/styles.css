@@ -307,8 +307,8 @@ section{position:relative;}
 /* ---------- Editorial intro (post-hero) ---------- */
 .intro-editorial{
   background:var(--offwhite);
-  padding-top:120px;
-  padding-bottom:56px;
+  padding-top:132px;
+  padding-bottom:132px;
 }
 .intro-head{
   max-width:760px;
@@ -441,7 +441,7 @@ section{position:relative;}
 }
 
 /* ---------- Lines comparison ---------- */
-.lines-compare{ background:var(--offwhite); padding-top:56px; }
+.lines-compare{ background:var(--offwhite); padding-top:132px; padding-bottom:132px; }
 .lines-compare .btn{ margin-top:28px; }
 .lines-compare .center-head{ max-width:720px; }
 
@@ -563,7 +563,8 @@ section{position:relative;}
   background:var(--offwhite);
   position:relative;
   overflow:hidden;
-  padding-top:140px;
+  padding-top:132px;
+  padding-bottom:132px;
 }
 @media (max-width:700px){ .product-section{ padding-top:100px; } }
 .fluid-ribbon{
@@ -597,11 +598,22 @@ section{position:relative;}
 .formula-head{ margin-bottom:40px; }
 .formula-head h2{ font-size:clamp(30px,4vw,46px); margin-bottom:16px; }
 .formula-head p{ color:var(--ink-soft); font-size:16px; font-weight:300; max-width:44ch; }
-.formula-item{ display:block; margin-bottom:36px; }
+.formula-item{ display:flex; gap:24px; align-items:flex-start; margin-bottom:36px; }
 .formula-item:last-child{ margin-bottom:0; }
 .formula-item .value-icon{ flex-shrink:0; margin:0; }
-.formula-item h4{ font-family:'Monoglyphic', sans-serif; font-weight:700; font-size:19px; margin-bottom:12px; padding-bottom:12px; border-bottom:1px solid rgba(28,63,138,0.12); }
-.formula-item p{ font-size:14.5px; line-height:1.6; color:var(--ink-soft); font-weight:300; }
+.formula-item h4{
+  font-family:'Monoglyphic', sans-serif;
+  font-weight:700;
+  font-size:19px;
+  flex:0 0 200px;
+  padding-right:24px;
+  border-right:1px solid rgba(28,63,138,0.12);
+}
+.formula-item p{ font-size:14.5px; line-height:1.6; color:var(--ink-soft); font-weight:300; flex:1; }
+@media (max-width:700px){
+  .formula-item{ flex-direction:column; gap:10px; }
+  .formula-item h4{ flex:none; padding-right:0; padding-bottom:10px; border-right:none; border-bottom:1px solid rgba(28,63,138,0.12); }
+}
 .formula-media{ display:flex; justify-content:center; }
 @media (max-width:960px){
   .formula-grid{ grid-template-columns:1fr; gap:40px; }
@@ -749,7 +761,7 @@ section{position:relative;}
 /* ---------- Drop / statement section (Z reading, drop falls through) ---------- */
 .drop-section{
   background:var(--offwhite);
-  padding:160px 0 140px;
+  padding:132px 0;
   position:relative;
   overflow:hidden;
 }
@@ -994,7 +1006,7 @@ section{position:relative;}
 /* ---------- Product catalog (Kate Farms bestsellers style) ---------- */
 .catalog-section{
   background:var(--offwhite);
-  padding:120px 0;
+  padding:132px 0;
   position:relative;
 }
 .catalog-header{
@@ -1167,7 +1179,7 @@ section{position:relative;}
 /* ---------- Values strip (Bucks Sauce style scroll-stack) ---------- */
 .values-strip{
   background:var(--blue);
-  padding:70px 0 40px;
+  padding:132px 0;
   position:relative;
   overflow:hidden;
 }
@@ -1301,7 +1313,7 @@ footer{
   position:relative;
   z-index:2;
   color:rgba(255,252,240,0.75);
-  padding:44px 0;
+  padding:24px 0;
   font-size:12px;
 }
 .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
