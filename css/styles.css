@@ -2152,18 +2152,9 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .lhub-table-group:hover td{ background:none !important; }
 .lhub-num{ font-weight:700; color:var(--ink); font-size:15.5px; }
 .lhub-table .ct{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:32px; height:32px;
-  border-radius:50%;
-  font-size:15px;
-  font-weight:700;
+  font-size:17px;
   line-height:1;
 }
-.lhub-table .ct-yes{ background:var(--green-ok); color:#ffffff; transition:transform .2s var(--ease), box-shadow .2s var(--ease); }
-.lhub-table .ct-yes.ct-highlight{ box-shadow:0 0 0 3px rgba(31,157,108,0.18); }
-.lhub-table .ct-no{ background:none; border:1.5px solid #d4d5d3; color:#c2c3c1; font-weight:400; }
 .lhub-warning{
   display:flex;
   align-items:flex-start;
