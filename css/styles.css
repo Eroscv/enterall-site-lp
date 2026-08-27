@@ -436,7 +436,7 @@ section{position:relative;}
   .intro-card-ready{ grid-column:2; grid-row:3; }
 }
 @media (max-width:760px){
-  .intro-editorial{ padding-top:80px; }
+  .intro-editorial{ padding-top:56px; padding-bottom:44px; }
   .intro-head{ margin-bottom:32px; text-align:left; }
   .intro-head h2{ font-size:clamp(30px,8vw,36px); }
   .intro-head p{ margin-left:0; margin-right:0; }
@@ -664,7 +664,7 @@ section{position:relative;}
   padding-top:64px;
   padding-bottom:64px;
 }
-@media (max-width:700px){ .product-section{ padding-top:44px; } }
+@media (max-width:700px){ .product-section{ padding-top:44px; padding-bottom:44px; } }
 .fluid-ribbon{
   position:absolute;
   inset:0;
@@ -1107,6 +1107,7 @@ section{position:relative;}
   padding:64px 0;
   position:relative;
 }
+@media (max-width:700px){ .catalog-section{ padding:44px 0; } }
 .catalog-header{
   display:flex;
   align-items:flex-end;
@@ -1281,6 +1282,7 @@ section{position:relative;}
   position:relative;
   overflow:hidden;
 }
+@media (max-width:760px){ .values-strip{ padding:64px 0; } }
 .values-strip .center-head h2{ color:var(--offwhite); margin-bottom:56px; }
 .values-carousel-wrap{
   position:relative;
@@ -1445,7 +1447,7 @@ footer{
   .testi-card{ width:80vw; height:auto; min-height:340px; }
   .values-carousel{ padding:10px 24px 20px; margin:0; }
   .value-card{ width:82vw; }
-  .drop-section{ padding:120px 0 70px; }
+  .drop-section{ padding:64px 0 48px; }
   .drop-zstack{ min-height:500px; }
 }
 
