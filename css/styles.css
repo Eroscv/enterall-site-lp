@@ -556,13 +556,13 @@ section{position:relative;}
 .intro-bento-arrow[disabled]:hover svg{ stroke:var(--ink); }
 
 /* ---------- Lines comparison ---------- */
-.lines-compare{ background:var(--offwhite); padding-top:64px; padding-bottom:64px; }
+.lines-compare{ background:var(--offwhite); padding-top:64px; padding-bottom:24px; }
 .lines-compare .btn{ margin-top:28px; }
 .lines-compare .center-head{ max-width:720px; }
 .lines-break{ display:none; }
 .lines-sub-break{ display:none; }
 @media (max-width:700px){
-  .lines-compare{ padding-bottom:32px; }
+  .lines-compare{ padding-top:16px; padding-bottom:32px; }
   .lines-break{ display:inline; }
   .lines-sub-break{ display:inline; }
   .lines-compare .center-head h2{ font-size:clamp(16px,4.7vw,20px); }
@@ -691,7 +691,11 @@ section{position:relative;}
   padding-top:64px;
   padding-bottom:64px;
 }
-@media (max-width:700px){ .product-section{ padding-top:44px; padding-bottom:44px; } }
+#produto.product-section{ padding-top:28px; }
+@media (max-width:700px){
+  .product-section{ padding-top:44px; padding-bottom:44px; }
+  #produto.product-section{ padding-top:16px; }
+}
 /* Fundo solido (sem onda decorativa) para "Uma fórmula, muitos motivos para confiar" */
 .product-section-split{
   background:#edefeb;
