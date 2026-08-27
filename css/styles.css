@@ -302,7 +302,8 @@ img{max-width:100%; display:block;}
 
 /* ---------- Section generic ---------- */
 section{position:relative;}
-.section-pad{padding:140px 0;}
+.section-pad{padding:72px 0;}
+@media (max-width:700px){ .section-pad{ padding:44px 0; } }
 .center-head{max-width:640px; margin:0 auto 64px; text-align:center; position:relative; z-index:2;}
 .center-head h2{font-size:clamp(30px,4vw,46px); margin-top:16px; text-shadow:0 1px 24px rgba(255,252,240,0.5);}
 .center-head p{ color:var(--ink-soft); font-size:16px; font-weight:300; margin-top:16px; }
