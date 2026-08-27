@@ -1423,15 +1423,15 @@ footer{
   position:relative;
   z-index:2;
   color:rgba(255,252,240,0.75);
-  padding:3px 0;
-  font-size:11px;
+  padding:22px 0;
+  font-size:12px;
   line-height:1.2;
 }
 .footer-row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
-.footer-links{display:flex; align-items:center; gap:16px; list-style:none;}
+.footer-links{display:flex; align-items:center; gap:20px; list-style:none;}
 .footer-links a{color:rgba(255,252,240,0.75); text-decoration:none; display:inline-flex; align-items:center;}
 .footer-links a:hover{color:var(--lime);}
-.footer-icon{width:16px; height:16px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; transition:stroke .2s var(--ease);}
+.footer-icon{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; transition:stroke .2s var(--ease);}
 
 /* ---------- Responsive ---------- */
 @media (max-width: 860px){
