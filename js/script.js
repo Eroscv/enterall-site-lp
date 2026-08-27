@@ -739,6 +739,79 @@ if (introBento) {
 }
 
 
+// Line hub family cards carousel (bluebox-max.html, mobile) — same pattern as introBento
+const lhubCardsTrack = document.getElementById('lhubCardsTrack');
+const lhubCardsPrev = document.getElementById('lhubCardsPrev');
+const lhubCardsNext = document.getElementById('lhubCardsNext');
+const lhubCardsDots = document.querySelectorAll('#lhubCardsDots .lhub-cards-dot');
+function lhubCardsStep() {
+  if (!lhubCardsTrack) return 0;
+  const first = lhubCardsTrack.firstElementChild;
+  if (!first) return lhubCardsTrack.clientWidth;
+  const style = getComputedStyle(lhubCardsTrack);
+  return first.getBoundingClientRect().width + parseFloat(style.gap || 14);
+}
+if (lhubCardsTrack) {
+  function lhubCardsUpdateDots() {
+    const maxScroll = lhubCardsTrack.scrollWidth - lhubCardsTrack.clientWidth;
+    if (lhubCardsDots.length) {
+      const step = lhubCardsStep();
+      const idx = Math.round(lhubCardsTrack.scrollLeft / step);
+      lhubCardsDots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
+    }
+    if (lhubCardsPrev) lhubCardsPrev.disabled = lhubCardsTrack.scrollLeft <= 4;
+    if (lhubCardsNext) lhubCardsNext.disabled = lhubCardsTrack.scrollLeft >= maxScroll - 4;
+  }
+  lhubCardsPrev?.addEventListener('click', () => {
+    lhubCardsTrack.scrollLeft = Math.max(0, lhubCardsTrack.scrollLeft - lhubCardsStep());
+  });
+  lhubCardsNext?.addEventListener('click', () => {
+    lhubCardsTrack.scrollLeft = Math.min(lhubCardsTrack.scrollWidth, lhubCardsTrack.scrollLeft + lhubCardsStep());
+  });
+  lhubCardsTrack.addEventListener('scroll', lhubCardsUpdateDots, { passive: true });
+  lhubCardsUpdateDots();
+}
+
+// Line hub family selector (bluebox-max.html) — click scrolls to / highlights the matching card
+const lhubSelector = document.getElementById('lhubSelector');
+if (lhubSelector && lhubCardsTrack) {
+  const lhubSelectorItems = Array.from(lhubSelector.querySelectorAll('.lhub-selector-item'));
+  const lhubCardEls = Array.from(lhubCardsTrack.querySelectorAll('.lhub-card'));
+
+  function lhubSetActiveSelector(index) {
+    lhubSelectorItems.forEach((item, i) => item.classList.toggle('is-active', i === index));
+  }
+
+  lhubSelectorItems.forEach((item, i) => {
+    item.addEventListener('click', () => {
+      lhubSetActiveSelector(i);
+      const card = lhubCardEls[i];
+      if (!card) return;
+      if (window.innerWidth <= 960) {
+        lhubCardsTrack.scrollLeft = i * lhubCardsStep();
+      } else {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  });
+
+  // Only auto-sync the active tab from scroll position on mobile, where cards
+  // appear one at a time in the carousel — on desktop all 3 sit side by side
+  // in a grid, so "which one is in view" isn't a meaningful signal there.
+  if ('IntersectionObserver' in window && lhubCardEls.length && window.innerWidth <= 960) {
+    const lhubCardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = lhubCardEls.indexOf(entry.target);
+          if (idx > -1) lhubSetActiveSelector(idx);
+        }
+      });
+    }, { threshold: 0.5 });
+    lhubCardEls.forEach(card => lhubCardObserver.observe(card));
+  }
+}
+
+
 // Line hub comparison table (bluebox-max.html) — column highlight on hover
 const lhubTable = document.getElementById('lhubTable');
 if (lhubTable) {

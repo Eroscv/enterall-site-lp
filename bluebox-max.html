@@ -44,6 +44,11 @@
         <a href="index.html#contato" class="btn btn-primary pdp-cta">Solicitar amostra</a>
       </div>
       <div class="lhub-hero-shot">
+        <svg class="lhub-hero-texture" viewBox="0 0 400 400" aria-hidden="true">
+          <circle cx="200" cy="200" r="120" />
+          <circle cx="200" cy="200" r="160" />
+          <circle cx="200" cy="200" r="196" />
+        </svg>
         <div class="lhub-hero-glow"></div>
         <img src="assets/images/products/product-4.png" alt="Embalagem BlueBox Max">
         <span class="lhub-hero-badge">MPC · 80/20</span>
@@ -67,11 +72,35 @@
   </div>
 </section>
 
+<!-- FAMILY SELECTOR -->
+<section class="lhub-selector-section">
+  <div class="wrap">
+    <div class="lhub-selector reveal" id="lhubSelector">
+      <button class="lhub-selector-item is-active" data-target="0" type="button">
+        <span class="lhub-sel-num">01</span>
+        <span class="lhub-sel-name">BlueBox Max</span>
+        <span class="lhub-sel-tag">Tolerância</span>
+      </button>
+      <button class="lhub-selector-item" data-target="1" type="button">
+        <span class="lhub-sel-num">02</span>
+        <span class="lhub-sel-name">BlueBox Soy</span>
+        <span class="lhub-sel-tag">Restrição alimentar</span>
+      </button>
+      <button class="lhub-selector-item" data-target="2" type="button">
+        <span class="lhub-sel-num">03</span>
+        <span class="lhub-sel-name">Intake Basic</span>
+        <span class="lhub-sel-tag">Acesso</span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <!-- LINE CARDS -->
 <section class="lhub-cards-section section-pad">
   <div class="wrap">
-    <div class="lhub-cards">
-      <div class="lhub-card reveal">
+    <div class="lhub-cards-wrap">
+      <div class="lhub-cards" id="lhubCardsTrack">
+      <div class="lhub-card lhub-card-max reveal">
         <div class="lhub-card-head">
           <span class="lhub-card-num">01</span>
           <span class="lhub-card-cat lhub-cat-tolerance">Tolerância</span>
@@ -79,7 +108,7 @@
         <h3>BlueBox Max</h3>
         <span class="lhub-versions">1.5 · 1.2</span>
         <p class="lhub-desc">Proteína concentrada de leite por ultrafiltração. A família de menor carga osmótica e menor sódio do portfólio.</p>
-        <div class="lhub-stats">
+        <div class="lhub-stats reveal-stagger">
           <div class="lhub-stat">
             <svg viewBox="0 0 24 24" class="lhub-stat-icon"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
             <strong>17%</strong><span>do VET em proteína</span>
@@ -100,7 +129,7 @@
         <p class="lhub-alert"><strong>Considerar:</strong> contém derivados de leite.</p>
       </div>
 
-      <div class="lhub-card reveal">
+      <div class="lhub-card lhub-card-soy reveal">
         <div class="lhub-card-head">
           <span class="lhub-card-num">02</span>
           <span class="lhub-card-cat lhub-cat-restriction">Restrição alimentar</span>
@@ -108,7 +137,7 @@
         <h3><a href="bluebox-soy.html">BlueBox Soy</a></h3>
         <span class="lhub-versions">1.5 · 1.2 · Fiber 1.2</span>
         <p class="lhub-desc">Proteína isolada de soja, o maior valor biológico entre as vegetais. Único caminho com fibra no portfólio.</p>
-        <div class="lhub-stats">
+        <div class="lhub-stats reveal-stagger">
           <div class="lhub-stat">
             <svg viewBox="0 0 24 24" class="lhub-stat-icon"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
             <strong>18%</strong><span>do VET em proteína</span>
@@ -122,14 +151,17 @@
             <strong>Zero</strong><span>colesterol</span>
           </div>
         </div>
+        <div class="lhub-fiber-highlight">
+          <strong>22 g/L</strong>
+          <span>de fibra na Fiber 1.2 · 50% solúvel · 50% insolúvel</span>
+        </div>
         <ul class="lhub-list">
-          <li>Fiber 1.2 com 22 g/L de fibra (50% solúvel · 50% insolúvel)</li>
           <li>26,5% TCM na versão 1.5</li>
         </ul>
         <p class="lhub-alert"><strong>Considerar:</strong> osmolaridade mais alta, até 366 mOsm/L.</p>
       </div>
 
-      <div class="lhub-card reveal">
+      <div class="lhub-card lhub-card-intake reveal">
         <div class="lhub-card-head">
           <span class="lhub-card-num">03</span>
           <span class="lhub-card-cat lhub-cat-access">Acesso</span>
@@ -137,7 +169,7 @@
         <h3><a href="intake-basic.html">Intake Basic</a></h3>
         <span class="lhub-versions">1.5 · 1.0</span>
         <p class="lhub-desc">Alternativa para quem enfrenta barreira de acesso à nutrição especializada. Micronutrientes preservados.</p>
-        <div class="lhub-stats">
+        <div class="lhub-stats reveal-stagger">
           <div class="lhub-stat">
             <svg viewBox="0 0 24 24" class="lhub-stat-icon"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8Z"/></svg>
             <strong>1,0</strong><span>kcal/mL única opção</span>
@@ -158,6 +190,22 @@
         </ul>
         <p class="lhub-alert"><strong>Considerar:</strong> 11% do VET em proteína e 10% de TCM.</p>
       </div>
+      </div>
+      <div class="lhub-cards-nav">
+        <div class="lhub-cards-dots" id="lhubCardsDots">
+          <span class="lhub-cards-dot is-active"></span>
+          <span class="lhub-cards-dot"></span>
+          <span class="lhub-cards-dot"></span>
+        </div>
+        <div class="lhub-cards-arrows">
+          <button class="lhub-cards-arrow prev" id="lhubCardsPrev" aria-label="Anterior">
+            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="lhub-cards-arrow next" id="lhubCardsNext" aria-label="Próximo">
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -165,42 +213,60 @@
 <!-- TECHNICAL COMPARISON -->
 <section class="lhub-table-section section-pad">
   <div class="wrap">
-    <div class="center-head reveal">
+    <div class="lhub-table-head reveal">
+      <span class="lhub-eyebrow">Comparativo técnico</span>
       <h2>Compare as fórmulas</h2>
+      <p>Veja rapidamente como cada linha se diferencia.</p>
     </div>
 
+    <p class="lhub-table-hint">Deslize para comparar →</p>
     <div class="lhub-table-wrap reveal">
       <table class="lhub-table" id="lhubTable">
         <thead>
           <tr>
             <th class="lhub-table-fixed"></th>
-            <th>BlueBox Max<span>Proteína do leite</span></th>
-            <th><a href="bluebox-soy.html">BlueBox Soy</a><span>Proteína de soja</span></th>
-            <th><a href="intake-basic.html">Intake Basic</a><span>Linha de acesso</span></th>
+            <th class="lhub-th-max">BlueBox Max<span>Proteína do leite</span></th>
+            <th class="lhub-th-soy"><a href="bluebox-soy.html">BlueBox Soy</a><span>Proteína de soja</span></th>
+            <th class="lhub-th-intake"><a href="intake-basic.html">Intake Basic</a><span>Linha de acesso</span></th>
           </tr>
         </thead>
         <tbody>
+          <tr class="lhub-table-group"><td colspan="4">Perfil nutricional</td></tr>
           <tr><td class="lhub-table-fixed">Posicionamento</td><td>Tolerância</td><td>Restrição alimentar</td><td>Acesso</td></tr>
           <tr><td class="lhub-table-fixed">Apresentações</td><td>1.5 · 1.2</td><td>1.5 · 1.2 · Fiber 1.2</td><td>1.5 · 1.0</td></tr>
           <tr><td class="lhub-table-fixed">Proteína (% do VET)</td><td class="lhub-num">17%</td><td class="lhub-num">18%</td><td class="lhub-num">11%</td></tr>
           <tr><td class="lhub-table-fixed">Fonte proteica</td><td>MPC ultrafiltrada</td><td>Isolada de soja</td><td>Isolada de soja</td></tr>
+
+          <tr class="lhub-table-group"><td colspan="4">Composição</td></tr>
           <tr><td class="lhub-table-fixed">Osmolaridade (faixa)</td><td class="lhub-num">199–264 mOsm/L</td><td class="lhub-num">230–366 mOsm/L</td><td class="lhub-num">165–246 mOsm/L</td></tr>
           <tr><td class="lhub-table-fixed">TCM na versão 1.5</td><td class="lhub-num">26,5%</td><td class="lhub-num">26,5%</td><td class="lhub-num">10%</td></tr>
           <tr><td class="lhub-table-fixed">Sódio na 1.5 (100 mL)</td><td class="lhub-num">72 mg</td><td class="lhub-num">123 mg</td><td class="lhub-num">99 mg</td></tr>
-          <tr><td class="lhub-table-fixed">Isento de leite</td><td class="ct ct-no">✕</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td></tr>
-          <tr><td class="lhub-table-fixed">Zero colesterol</td><td class="ct ct-no">✕</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td></tr>
-          <tr><td class="lhub-table-fixed">Opção com fibra</td><td class="ct ct-no">✕</td><td class="ct ct-yes">✓</td><td class="ct ct-no">✕</td></tr>
-          <tr><td class="lhub-table-fixed">Opção 1,0 kcal/mL</td><td class="ct ct-no">✕</td><td class="ct ct-no">✕</td><td class="ct ct-yes">✓</td></tr>
-          <tr><td class="lhub-table-fixed">Alto teor de TCM</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td><td class="ct ct-no">✕</td></tr>
+
+          <tr class="lhub-table-group"><td colspan="4">Características</td></tr>
+          <tr><td class="lhub-table-fixed">Isento de leite</td><td class="ct ct-no">×</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td></tr>
+          <tr><td class="lhub-table-fixed">Zero colesterol</td><td class="ct ct-no">×</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td></tr>
+          <tr><td class="lhub-table-fixed">Opção com fibra</td><td class="ct ct-no">×</td><td class="ct ct-yes ct-highlight">✓</td><td class="ct ct-no">×</td></tr>
+          <tr><td class="lhub-table-fixed">Opção 1,0 kcal/mL</td><td class="ct ct-no">×</td><td class="ct ct-no">×</td><td class="ct ct-yes ct-highlight">✓</td></tr>
+          <tr><td class="lhub-table-fixed">Alto teor de TCM</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td><td class="ct ct-no">×</td></tr>
+
+          <tr class="lhub-table-group"><td colspan="4">Restrições</td></tr>
           <tr><td class="lhub-table-fixed">Sem glúten</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td></tr>
           <tr><td class="lhub-table-fixed">Sem lactose</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td></tr>
           <tr><td class="lhub-table-fixed">Sem adição de sacarose</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td><td class="ct ct-yes">✓</td></tr>
+
+          <tr class="lhub-table-group"><td colspan="4">Informações regulatórias</td></tr>
           <tr><td class="lhub-table-fixed">Registro ANVISA</td><td>.0001 · .0002</td><td>.0003 · .0004 · .0005</td><td>.0006 · .0007</td></tr>
         </tbody>
       </table>
     </div>
 
-    <p class="lhub-warning reveal">⚠️ Dados do Guia de Produtos 2025. Osmolaridade do Soy Fiber 1.2 (230 mOsm/L) e unidades de vitamina B6 e B9 pendentes de validação técnica.</p>
+    <div class="lhub-warning reveal">
+      <svg viewBox="0 0 24 24" class="lhub-warning-icon" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><circle cx="12" cy="8" r="0.5" fill="currentColor"/></svg>
+      <div>
+        <strong>Nota técnica</strong>
+        <p>Dados do Guia de Produtos 2025. Osmolaridade do Soy Fiber 1.2 (230 mOsm/L) e unidades de vitamina B6 e B9 pendentes de validação técnica.</p>
+      </div>
+    </div>
   </div>
 </section>
 
