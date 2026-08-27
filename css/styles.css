@@ -2090,17 +2090,14 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .lhub-alert strong{ color:var(--ink-soft); font-weight:600; }
 
 /* --- Technical comparison table --- */
-.lhub-table-section{ background:#f5f7f8; }
+.lhub-table-section{ background:var(--offwhite); }
 .lhub-table-head{ max-width:640px; margin-bottom:40px; text-align:left; }
 .lhub-table-head h2{ font-size:clamp(32px,3.6vw,50px); margin:8px 0 14px; }
 .lhub-table-head p{ color:var(--ink-soft); font-size:16px; font-weight:300; }
 .lhub-table-hint{ display:none; }
 .lhub-table-wrap{
   overflow-x:auto;
-  border:1px solid #e8e8e3;
-  border-radius:22px;
   background:#ffffff;
-  box-shadow:0 24px 48px -40px rgba(18,32,69,0.18);
 }
 .lhub-table{ width:100%; min-width:640px; border-collapse:collapse; table-layout:fixed; }
 .lhub-table col.lhub-col-fixed{ width:32%; }
@@ -2108,47 +2105,40 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .lhub-table th, .lhub-table td{
   text-align:center;
   vertical-align:middle;
-  padding:15px 16px;
-  border-bottom:1px solid #ecede9;
-  font-size:14px;
-  color:var(--ink-soft);
+  padding:22px 16px;
+  border-bottom:1px solid #ececec;
+  font-size:14.5px;
+  color:var(--ink);
   transition:background .15s var(--ease);
 }
-.lhub-table tbody tr:nth-child(even){ background:#fafaf8; }
 .lhub-table-fixed{
   position:sticky; left:0;
   text-align:left !important;
-  background:inherit;
   background-color:#ffffff;
-  color:var(--ink);
-  font-weight:600;
-  font-size:13.5px;
+  color:var(--blue);
+  font-weight:500;
+  font-size:14px;
   z-index:1;
 }
-.lhub-table tbody tr:nth-child(even) .lhub-table-fixed{ background-color:#fafaf8; }
 .lhub-table thead th{
   position:sticky; top:0;
   font-family:'Monoglyphic', sans-serif;
-  font-size:17px;
+  font-size:19px;
   font-weight:700;
   color:var(--ink);
-  padding-top:18px;
+  padding:0 16px 18px;
   background:#ffffff;
-  border-top:3px solid transparent;
-  border-bottom:1px solid #ecede9;
+  border-bottom:1px solid #e2e2e2;
   z-index:2;
 }
 .lhub-table thead th.lhub-table-fixed{ background:#ffffff; z-index:3; }
-.lhub-th-max{ border-top-color:var(--blue); }
-.lhub-th-soy{ border-top-color:var(--green-ok); }
-.lhub-th-intake{ border-top-color:var(--ink-soft); }
 .lhub-table thead th a{ color:inherit; text-decoration:none; border-bottom:1px solid rgba(28,63,138,0.25); }
 .lhub-table thead th a:hover{ border-color:var(--blue); }
-.lhub-table thead th span{ display:block; font-size:11.5px; font-weight:400; color:var(--ink-soft); margin-top:4px; }
+.lhub-table thead th span{ display:block; font-size:11px; font-weight:400; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft); margin-top:4px; }
 .lhub-table tbody tr:last-child td{ border-bottom:none; }
 .lhub-table-group td{
   text-align:left !important;
-  padding:26px 16px 8px;
+  padding:30px 16px 10px;
   font-size:10.5px;
   font-weight:700;
   letter-spacing:0.08em;
@@ -2158,23 +2148,22 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
   border-bottom:none;
   background:none !important;
 }
-.lhub-table-group:first-child td{ padding-top:16px; }
+.lhub-table-group:first-child td{ padding-top:18px; }
 .lhub-table-group:hover td{ background:none !important; }
 .lhub-num{ font-weight:700; color:var(--ink); font-size:15.5px; }
-.lhub-table td:has(.ct){ padding-top:12px; padding-bottom:12px; }
 .lhub-table .ct{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:26px; height:26px;
+  width:32px; height:32px;
   border-radius:50%;
-  font-size:13px;
+  font-size:15px;
   font-weight:700;
   line-height:1;
 }
-.lhub-table .ct-yes{ background:#eaf7f0; color:var(--green-ok); }
-.lhub-table .ct-yes.ct-highlight{ background:var(--green-ok); color:#ffffff; box-shadow:0 4px 10px -4px rgba(31,157,108,0.5); }
-.lhub-table .ct-no{ background:#f2f2f0; color:#b7b9b6; font-weight:600; }
+.lhub-table .ct-yes{ background:var(--green-ok); color:#ffffff; transition:transform .2s var(--ease), box-shadow .2s var(--ease); }
+.lhub-table .ct-yes.ct-highlight{ box-shadow:0 0 0 3px rgba(31,157,108,0.18); }
+.lhub-table .ct-no{ background:none; border:1.5px solid #d4d5d3; color:#c2c3c1; font-weight:400; }
 .lhub-warning{
   display:flex;
   align-items:flex-start;
