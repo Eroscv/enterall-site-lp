@@ -542,7 +542,12 @@ section{position:relative;}
 .lines-compare{ background:var(--offwhite); padding-top:64px; padding-bottom:64px; }
 .lines-compare .btn{ margin-top:28px; }
 .lines-compare .center-head{ max-width:720px; }
-@media (max-width:700px){ .lines-compare{ padding-bottom:32px; } }
+.lines-break{ display:none; }
+@media (max-width:700px){
+  .lines-compare{ padding-bottom:32px; }
+  .lines-break{ display:inline; }
+  .lines-compare .center-head h2{ font-size:clamp(16px,4.7vw,20px); }
+}
 
 .compare-cards{
   display:grid;
