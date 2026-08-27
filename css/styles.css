@@ -671,6 +671,10 @@ section{position:relative;}
   padding-bottom:64px;
 }
 @media (max-width:700px){ .product-section{ padding-top:44px; padding-bottom:44px; } }
+/* Divisão flat de cor (sem onda decorativa) para "Uma fórmula, muitos motivos para confiar" */
+.product-section-split{
+  background:linear-gradient(180deg, #ffffff 0%, #ffffff 44%, #edefeb 44%, #edefeb 100%);
+}
 .fluid-ribbon{
   position:absolute;
   inset:0;
