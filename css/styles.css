@@ -2184,13 +2184,29 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .lhub-warning strong{ display:block; font-size:11px; color:var(--ink); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; }
 .lhub-warning p{ margin:0; line-height:1.5; }
 @media (max-width:960px){
-  .lhub-table-wrap{ border-radius:16px; }
+  .lhub-table-wrap{ border-radius:16px; -webkit-overflow-scrolling:touch; }
   .lhub-table-hint{
     display:block;
     font-size:12px;
     color:var(--ink-soft);
     margin-bottom:10px;
   }
+  /* Larguras de coluna dedicadas ao mobile: primeira coluna mais estreita
+     (não precisa dos 32% do desktop) para dar mais espaço aos dados,
+     evitando quebra de palavra dentro das células de produto. */
+  .lhub-table{ min-width:520px; }
+  .lhub-table col.lhub-col-fixed{ width:150px; }
+  .lhub-table col.lhub-col-data{ width:auto; }
+  .lhub-table th, .lhub-table td{ padding:16px 10px; font-size:13px; }
+  .lhub-table-fixed{ font-size:12.5px; padding-left:14px; }
+  .lhub-table thead th{ font-size:16px; padding:20px 10px 16px; }
+  .lhub-table thead th span{ font-size:9.5px; }
+  .lhub-table .ct{ font-size:15px; }
+  .lhub-table-group td{ padding:22px 10px 8px; font-size:10px; }
+}
+@media (max-width:420px){
+  .lhub-table col.lhub-col-fixed{ width:128px; }
+  .lhub-table th, .lhub-table td{ padding:14px 8px; font-size:12.5px; }
 }
 
 /* --- Product catalog cards --- */
