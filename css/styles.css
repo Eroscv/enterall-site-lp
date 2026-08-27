@@ -366,21 +366,21 @@ section{position:relative;}
 }
 .intro-card{
   background:#e8f2df;
-  border:1px solid rgba(122,74,163,0.14);
+  border:1px solid rgba(31,157,108,0.14);
   border-radius:22px;
   padding:30px 28px;
   box-sizing:border-box;
   position:relative;
-  box-shadow:0 16px 32px -26px rgba(74,42,110,0.22);
+  box-shadow:0 16px 32px -26px rgba(18,90,64,0.22);
   transition:transform .25s var(--ease), box-shadow .25s var(--ease);
 }
 .intro-card:hover, .intro-card:active{
   transform:translateY(-3px);
-  box-shadow:0 22px 40px -22px rgba(74,42,110,0.28);
+  box-shadow:0 22px 40px -22px rgba(18,90,64,0.28);
 }
 .intro-card-icon{
   width:26px; height:26px;
-  stroke:#6d4791; fill:none; stroke-width:1.6;
+  stroke:var(--green-ok); fill:none; stroke-width:1.6;
   stroke-linecap:round; stroke-linejoin:round;
   margin-bottom:16px;
 }
@@ -400,12 +400,12 @@ section{position:relative;}
   min-height:100%;
 }
 .intro-card-shot{ margin-top:20px; display:flex; justify-content:center; }
-.intro-card-shot img{ height:370px; width:auto; object-fit:contain; filter:drop-shadow(0 24px 30px rgba(74,42,110,0.22)); }
+.intro-card-shot img{ height:370px; width:auto; object-fit:contain; filter:drop-shadow(0 24px 30px rgba(18,90,64,0.22)); }
 
 .intro-card-precision{ grid-column:2; grid-row:1; }
 .intro-badges{ display:flex; gap:8px; margin-top:20px; flex-wrap:wrap; }
 .intro-badge{
-  border:1px solid rgba(122,74,163,0.22);
+  border:1px solid rgba(31,157,108,0.22);
   background:rgba(255,255,255,0.5);
   border-radius:12px;
   padding:10px 12px;
@@ -416,23 +416,23 @@ section{position:relative;}
   line-height:1.3;
 }
 .intro-badge small{ display:block; font-size:10.5px; font-weight:400; color:var(--ink-soft); }
-.intro-badge-dark{ background:#6d4791; color:var(--offwhite); border-color:#6d4791; }
+.intro-badge-dark{ background:var(--green-ok); color:var(--offwhite); border-color:var(--green-ok); }
 .intro-badge-dark small{ color:rgba(255,252,240,0.7); }
 
 .intro-card-vitamins{ grid-column:3; grid-row:1; }
 .intro-pills{ display:flex; gap:6px; flex-wrap:wrap; margin-top:20px; }
 .intro-pills span{
-  border:1px solid rgba(122,74,163,0.22);
+  border:1px solid rgba(31,157,108,0.22);
   background:rgba(255,255,255,0.5);
   border-radius:var(--radius-full);
   padding:5px 11px;
   font-size:11.5px;
   font-weight:600;
-  color:#6d4791;
+  color:var(--green-ok);
 }
 
 .intro-card-portfolio{ grid-column:2; grid-row:2; }
-.intro-number{ font-size:44px; font-weight:800; color:#6d4791; line-height:1; margin-top:18px; }
+.intro-number{ font-size:44px; font-weight:800; color:var(--green-ok); line-height:1; margin-top:18px; }
 .intro-number-sub{ display:block; font-size:12.5px; color:var(--ink-soft); margin-top:4px; }
 
 .intro-card-ready{ grid-column:3; grid-row:2; display:flex; flex-direction:column; justify-content:center; }
@@ -484,7 +484,7 @@ section{position:relative;}
   }
   .intro-card{
     border-radius:13px;
-    box-shadow:0 10px 20px -18px rgba(74,42,110,0.22);
+    box-shadow:0 10px 20px -18px rgba(18,90,64,0.22);
     display:flex;
     flex-direction:column;
   }
@@ -515,12 +515,12 @@ section{position:relative;}
   .intro-card-formula .intro-card-shot{ margin-top:16px; padding-top:14px; }
   .intro-card-shot img{ height:245px; }
   .intro-badges{ gap:7px; margin-top:16px; }
-  .intro-badge{ padding:9px 6px; border-radius:10px; font-size:13.5px; background:rgba(255,255,255,0.55); border-color:rgba(122,74,163,0.22); }
+  .intro-badge{ padding:9px 6px; border-radius:10px; font-size:13.5px; background:rgba(255,255,255,0.55); border-color:rgba(31,157,108,0.22); }
   .intro-badge small{ font-size:9.5px; }
-  .intro-badge-dark{ background:#6d4791; border-color:#6d4791; }
+  .intro-badge-dark{ background:var(--green-ok); border-color:var(--green-ok); }
   .intro-pills{ gap:5px; margin-top:16px; }
-  .intro-pills span{ padding:4.5px 9px; font-size:11px; background:rgba(255,255,255,0.5); border-color:rgba(122,74,163,0.22); color:#6d4791; }
-  .intro-number{ font-size:38px; margin-top:14px; color:#6d4791; }
+  .intro-pills span{ padding:4.5px 9px; font-size:11px; background:rgba(255,255,255,0.5); border-color:rgba(31,157,108,0.22); color:var(--green-ok); }
+  .intro-number{ font-size:38px; margin-top:14px; color:var(--green-ok); }
   .intro-number-sub{ margin-top:3px; }
   .intro-card-ready{ justify-content:flex-start; }
   .intro-bento-wrap{ display:flex; flex-direction:column; }
