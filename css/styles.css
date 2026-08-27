@@ -2102,9 +2102,12 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
   background:#ffffff;
   box-shadow:0 24px 48px -40px rgba(18,32,69,0.18);
 }
-.lhub-table{ width:100%; border-collapse:collapse; min-width:640px; }
+.lhub-table{ width:100%; min-width:640px; border-collapse:collapse; table-layout:fixed; }
+.lhub-table col.lhub-col-fixed{ width:32%; }
+.lhub-table col.lhub-col-data{ width:22.67%; }
 .lhub-table th, .lhub-table td{
   text-align:center;
+  vertical-align:middle;
   padding:15px 16px;
   border-bottom:1px solid #ecede9;
   font-size:14px;
