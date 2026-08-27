@@ -541,6 +541,7 @@ section{position:relative;}
 .lines-compare{ background:var(--offwhite); padding-top:64px; padding-bottom:64px; }
 .lines-compare .btn{ margin-top:28px; }
 .lines-compare .center-head{ max-width:720px; }
+@media (max-width:700px){ .lines-compare{ padding-bottom:32px; } }
 
 .compare-cards{
   display:grid;
@@ -663,7 +664,7 @@ section{position:relative;}
   padding-top:64px;
   padding-bottom:64px;
 }
-@media (max-width:700px){ .product-section{ padding-top:100px; } }
+@media (max-width:700px){ .product-section{ padding-top:44px; } }
 .fluid-ribbon{
   position:absolute;
   inset:0;
