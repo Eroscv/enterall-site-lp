@@ -671,14 +671,9 @@ section{position:relative;}
   padding-bottom:64px;
 }
 @media (max-width:700px){ .product-section{ padding-top:44px; padding-bottom:44px; } }
-/* Divisão flat de cor (sem onda decorativa) para "Uma fórmula, muitos motivos para confiar" */
+/* Fundo solido (sem onda decorativa) para "Uma fórmula, muitos motivos para confiar" */
 .product-section-split{
-  background:linear-gradient(180deg, #ffffff 0%, #ffffff 56%, #edefeb 56%, #edefeb 100%);
-}
-@media (max-width:700px){
-  .product-section-split{
-    background:linear-gradient(180deg, #ffffff 0%, #ffffff 72%, #edefeb 72%, #edefeb 100%);
-  }
+  background:#edefeb;
 }
 .fluid-ribbon{
   position:absolute;
@@ -1004,7 +999,7 @@ section{position:relative;}
   width:52px; height:52px;
   margin:-26px 0 0 -26px;
 }
-.cursor-blob-field.in-testi .cursor-blob{ background:var(--lime); }
+.cursor-blob-field.in-testi .cursor-blob{ background:var(--blue); }
 .testi-head{color:var(--ink); position:relative; z-index:3; margin-bottom:48px; max-width:640px;}
 .testi-head .eyebrow{color:var(--blue);}
 .testi-head h2{color:var(--ink); line-height:1.2;}
