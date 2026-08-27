@@ -2283,7 +2283,6 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .lhub-product-card:hover{
   transform:translateY(-4px);
   box-shadow:0 26px 44px -22px rgba(18,32,69,0.24);
-  background:var(--offwhite);
 }
 .lhub-product-badge{
   align-self:flex-start;
