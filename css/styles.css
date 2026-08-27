@@ -1939,28 +1939,6 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
   gap:26px;
 }
 .lhub-cards-nav{ display:none; }
-@media (max-width:960px){
-  .lhub-cards{
-    display:flex;
-    grid-template-columns:none;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    scroll-padding-left:20px;
-    gap:14px;
-    margin:0 -32px;
-    padding:4px 20px 4px;
-    scrollbar-width:none;
-  }
-  .lhub-cards::-webkit-scrollbar{ display:none; }
-  .lhub-card{ flex:0 0 84%; min-width:0; scroll-snap-align:start; }
-  .lhub-cards-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:22px;
-  }
-  .lhub-cards .reveal{ opacity:1 !important; transform:none !important; }
-}
 .lhub-cards-dots{ display:flex; align-items:center; gap:6px; }
 .lhub-cards-dot{ width:6px; height:6px; border-radius:50%; background:rgba(28,63,138,0.2); transition:background .25s var(--ease), width .25s var(--ease); }
 .lhub-cards-dot.is-active{ background:var(--ink); width:16px; border-radius:3px; }
@@ -2079,6 +2057,53 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 }
 .lhub-alert strong{ color:var(--ink-soft); font-weight:600; }
 
+@media (max-width:960px){
+  .lhub-cards{
+    display:flex;
+    grid-template-columns:none;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-padding-left:20px;
+    gap:14px;
+    margin:0 -32px;
+    padding:4px 20px 4px;
+    scrollbar-width:none;
+  }
+  .lhub-cards::-webkit-scrollbar{ display:none; }
+  .lhub-card{
+    flex:0 0 84%;
+    min-width:0;
+    scroll-snap-align:start;
+    padding:26px 22px;
+    overflow:hidden;
+  }
+  .lhub-cards-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:22px;
+  }
+  .lhub-cards .reveal{ opacity:1 !important; transform:none !important; }
+  .lhub-card h3{ font-size:21px; }
+  .lhub-card-num{ font-size:12px; }
+  .lhub-card-cat{ font-size:10.5px; padding:4px 10px; }
+  .lhub-versions{ font-size:12px; margin-bottom:12px; }
+  .lhub-desc{ font-size:13.5px; margin-bottom:20px; }
+  .lhub-stats{
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:16px 12px;
+    margin-bottom:20px;
+  }
+  .lhub-stat{ min-width:0; gap:6px; }
+  .lhub-stat strong{ font-size:24px; white-space:nowrap; }
+  .lhub-stat span{ font-size:10.5px; }
+  .lhub-stat-icon{ width:16px; height:16px; }
+  .lhub-fiber-highlight{ flex-wrap:wrap; margin-bottom:16px; padding-bottom:16px; }
+  .lhub-fiber-highlight strong{ font-size:22px; }
+  .lhub-list li{ font-size:12.5px; }
+  .lhub-alert{ font-size:11px; }
+}
+
 /* --- Technical comparison table --- */
 .lhub-table-section{ background:var(--offwhite); }
 .lhub-table-head{ max-width:640px; margin-bottom:40px; text-align:left; }
@@ -2183,7 +2208,7 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .lhub-warning-icon{ width:16px; height:16px; flex:none; margin-top:1px; stroke:var(--ink-soft); fill:none; stroke-width:1.6; opacity:0.7; }
 .lhub-warning strong{ display:block; font-size:11px; color:var(--ink); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; }
 .lhub-warning p{ margin:0; line-height:1.5; }
-@media (max-width:960px){
+@media (max-width:960px) and (min-width:601px){
   .lhub-table-wrap{ border-radius:16px; -webkit-overflow-scrolling:touch; }
   .lhub-table-hint{
     display:block;
@@ -2191,9 +2216,6 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
     color:var(--ink-soft);
     margin-bottom:10px;
   }
-  /* Larguras de coluna dedicadas ao mobile: primeira coluna mais estreita
-     (não precisa dos 32% do desktop) para dar mais espaço aos dados,
-     evitando quebra de palavra dentro das células de produto. */
   .lhub-table{ min-width:520px; }
   .lhub-table col.lhub-col-fixed{ width:150px; }
   .lhub-table col.lhub-col-data{ width:auto; }
@@ -2204,9 +2226,30 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
   .lhub-table .ct{ font-size:15px; }
   .lhub-table-group td{ padding:22px 10px 8px; font-size:10px; }
 }
-@media (max-width:420px){
-  .lhub-table col.lhub-col-fixed{ width:128px; }
-  .lhub-table th, .lhub-table td{ padding:14px 8px; font-size:12.5px; }
+
+/* Celular: sem scroll horizontal — todas as 4 colunas cabem na tela,
+   como uma tabela compacta única (mesma lógica do desktop, só menor). */
+@media (max-width:600px){
+  .lhub-table-hint{ display:none; }
+  .lhub-table-wrap{ overflow-x:visible; border-radius:14px; }
+  .lhub-table{ width:100%; min-width:0; table-layout:fixed; }
+  .lhub-table col.lhub-col-fixed{ width:30%; }
+  .lhub-table col.lhub-col-data{ width:23.33%; }
+  .lhub-table th, .lhub-table td{ padding:10px 4px; font-size:10.5px; }
+  .lhub-table-fixed{
+    position:static;
+    font-size:10.5px;
+    padding-left:6px;
+    line-height:1.25;
+  }
+  .lhub-table thead th{ position:sticky; top:0; font-size:12px; padding:14px 4px 10px; }
+  .lhub-table thead th.lhub-table-fixed{ position:sticky; }
+  .lhub-table thead th span{ font-size:7.5px; margin-top:3px; letter-spacing:0.02em; }
+  .lhub-th-max::before, .lhub-th-soy::before, .lhub-th-intake::before{ width:5px; height:5px; margin-right:4px; }
+  .lhub-th-max::after, .lhub-th-soy::after, .lhub-th-intake::after{ left:4px; right:4px; }
+  .lhub-table .ct{ font-size:11px; }
+  .lhub-num{ font-size:11px; }
+  .lhub-table-group td{ padding:16px 4px 6px; font-size:8px; letter-spacing:0.05em; }
 }
 
 /* --- Product catalog cards --- */
