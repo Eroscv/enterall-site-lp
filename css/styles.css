@@ -770,7 +770,7 @@ section{position:relative;}
   width:44%;
   aspect-ratio:4/5;
   border-radius:16px;
-  border:5px solid var(--offwhite);
+  border:1px solid rgba(28,63,138,0.08);
   box-shadow:0 22px 40px -16px rgba(18,32,69,0.42);
   transform:rotate(3deg);
   animation:productCollageBobAccent 6s ease-in-out infinite .4s;
