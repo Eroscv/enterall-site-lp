@@ -567,6 +567,7 @@ section{position:relative;}
   .lines-sub-break{ display:inline; }
   .lines-compare .center-head h2{ font-size:clamp(16px,4.7vw,20px); }
   .lines-compare .center-head p{ font-size:14px; }
+  .lhub-position .center-head h2{ font-size:clamp(16px,4.7vw,20px); }
 }
 
 .compare-cards{
