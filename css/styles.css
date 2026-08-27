@@ -1522,10 +1522,10 @@ body.has-custom-cursor .value-card{ cursor:none; }
   width:10px; height:10px;
   border-radius:50%;
   background:var(--blue);
+  box-shadow:0 0 0 1.5px rgba(255,252,240,0.9);
   pointer-events:none;
   z-index:9999;
   margin-left:-5px; margin-top:-5px;
-  mix-blend-mode:difference;
   opacity:1;
   transition:width .2s var(--ease), height .2s var(--ease), margin .2s var(--ease), opacity .2s var(--ease);
 }
@@ -1534,10 +1534,10 @@ body.has-custom-cursor .value-card{ cursor:none; }
   width:38px; height:38px;
   border-radius:50%;
   border:1.5px solid var(--blue);
+  box-shadow:0 0 0 1px rgba(255,252,240,0.7);
   pointer-events:none;
   z-index:9998;
   margin-left:-19px; margin-top:-19px;
-  mix-blend-mode:difference;
   opacity:1;
   transition:width .3s var(--ease), height .3s var(--ease), margin .3s var(--ease), border-color .3s var(--ease), background .3s var(--ease), opacity .2s var(--ease);
 }
