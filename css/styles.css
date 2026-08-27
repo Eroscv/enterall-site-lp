@@ -382,7 +382,7 @@ section{position:relative;}
   min-height:100%;
 }
 .intro-card-shot{ margin-top:20px; display:flex; justify-content:center; }
-.intro-card-shot img{ height:260px; width:auto; object-fit:contain; filter:drop-shadow(0 24px 30px rgba(74,42,110,0.22)); }
+.intro-card-shot img{ height:310px; width:auto; object-fit:contain; filter:drop-shadow(0 24px 30px rgba(74,42,110,0.22)); }
 
 .intro-card-precision{ grid-column:2; grid-row:1; }
 .intro-badges{ display:flex; gap:8px; margin-top:20px; flex-wrap:wrap; }
@@ -495,7 +495,7 @@ section{position:relative;}
   .intro-card-formula{ padding:0; overflow:hidden; }
   .intro-card-formula .intro-card-text{ padding:24px 22px 0; }
   .intro-card-formula .intro-card-shot{ margin-top:16px; padding-top:14px; }
-  .intro-card-shot img{ height:158px; }
+  .intro-card-shot img{ height:200px; }
   .intro-badges{ gap:7px; margin-top:16px; }
   .intro-badge{ padding:9px 6px; border-radius:10px; font-size:13.5px; background:rgba(255,255,255,0.55); border-color:rgba(122,74,163,0.22); }
   .intro-badge small{ font-size:9.5px; }
