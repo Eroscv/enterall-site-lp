@@ -1419,6 +1419,9 @@ section{position:relative;}
   object-position:center 30%;
   z-index:0;
 }
+@media (max-width:700px){
+  .final-cta-video{ object-position:center top; }
+}
 .final-cta-overlay{
   position:absolute; inset:0;
   z-index:1;
