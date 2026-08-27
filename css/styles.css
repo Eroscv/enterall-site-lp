@@ -2143,7 +2143,6 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .lhub-table thead th a:hover{ border-color:var(--blue); }
 .lhub-table thead th span{ display:block; font-size:11.5px; font-weight:400; color:var(--ink-soft); margin-top:4px; }
 .lhub-table tbody tr:last-child td{ border-bottom:none; }
-.lhub-table tbody tr:hover td{ background:rgba(47,143,201,0.05); }
 .lhub-table-group td{
   text-align:left !important;
   padding:26px 16px 8px;
@@ -2159,11 +2158,12 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .lhub-table-group:first-child td{ padding-top:16px; }
 .lhub-table-group:hover td{ background:none !important; }
 .lhub-num{ font-weight:700; color:var(--ink); font-size:15.5px; }
+.lhub-table td:has(.ct){ padding-top:12px; padding-bottom:12px; }
 .lhub-table .ct{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:24px; height:24px;
+  width:26px; height:26px;
   border-radius:50%;
   font-size:13px;
   font-weight:700;
@@ -2171,11 +2171,7 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 }
 .lhub-table .ct-yes{ background:#eaf7f0; color:var(--green-ok); }
 .lhub-table .ct-yes.ct-highlight{ background:var(--green-ok); color:#ffffff; box-shadow:0 4px 10px -4px rgba(31,157,108,0.5); }
-.lhub-table .ct-no{ background:none; color:#c7c9c8; font-weight:400; }
-/* Realce de coluna no hover — um tom por família */
-.lhub-table td.is-col-active:nth-child(2), .lhub-table th.is-col-active:nth-child(2){ background:#f4f8ff !important; }
-.lhub-table td.is-col-active:nth-child(3), .lhub-table th.is-col-active:nth-child(3){ background:#f4faf7 !important; }
-.lhub-table td.is-col-active:nth-child(4), .lhub-table th.is-col-active:nth-child(4){ background:#f7f8fa !important; }
+.lhub-table .ct-no{ background:#f2f2f0; color:#b7b9b6; font-weight:600; }
 .lhub-warning{
   display:flex;
   align-items:flex-start;
