@@ -1661,16 +1661,6 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
 .bc-diff-2{ top:55%; right:-2%; }
 
 .pdp-reviews .center-head{ margin-bottom:40px; }
-.pdp-photo-strip{ display:flex; gap:16px; margin-bottom:40px; overflow-x:auto; }
-.pdp-photo{
-  flex:0 0 160px;
-  height:160px;
-  border-radius:16px;
-  background:linear-gradient(140deg, #1c3f8a 0%, #2a4f9e 100%);
-}
-.pdp-photo-2{ background:linear-gradient(140deg, #35579e 0%, #223a6b 100%); }
-.pdp-photo-3{ background:linear-gradient(140deg, #1c3f8a 0%, #3a2f6b 100%); }
-.pdp-photo-4{ background:linear-gradient(140deg, #16305f 0%, #1c3f8a 60%, #2a4f9e 100%); }
 
 .pdp-thumbs{ display:flex; gap:12px; margin-top:16px; }
 .pdp-thumb{
