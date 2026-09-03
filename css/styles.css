@@ -1203,19 +1203,19 @@ section{position:relative;}
 .line-card h3{
   font-family:'Monoglyphic', sans-serif;
   font-weight:800;
-  font-size:clamp(26px,2.8vw,32px);
+  font-size:clamp(28px,3.2vw,36px);
   margin-bottom:12px;
 }
 .line-card-tag{
   display:inline-block;
   font-weight:600;
-  font-size:14px;
+  font-size:16px;
   margin-bottom:12px;
 }
-.line-card p{ font-size:14.5px; line-height:1.55; font-weight:300; }
+.line-card p{ font-size:16.5px; line-height:1.6; font-weight:300; }
 .line-card-cta{
   display:inline-flex; align-items:center; gap:8px;
-  font-weight:600; font-size:14px;
+  font-weight:600; font-size:16px;
   text-decoration:none;
   align-self:flex-start;
   padding:11px 20px;
