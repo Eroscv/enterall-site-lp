@@ -833,6 +833,16 @@ section{position:relative;}
   text-align:center;
   line-height:1.2;
 }
+.product-collage-card-photo{
+  padding:0;
+  background:none !important;
+}
+.product-collage-card-photo img{
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+}
 @keyframes productCollageBob{
   0%, 100%{ transform:translateY(0); }
   50%{ transform:translateY(-10px); }
