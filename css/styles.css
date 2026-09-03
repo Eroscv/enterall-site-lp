@@ -1108,7 +1108,7 @@ section{position:relative;}
 .testi-stars{ display:flex; gap:3px; margin-bottom:16px; }
 .testi-stars svg{width:15px; height:15px; fill:var(--lime); stroke:none;}
 .testi-quote{
-  font-size:15px;
+  font-size:17px;
   line-height:1.6;
   color:var(--ink);
   font-weight:300;
@@ -1124,13 +1124,13 @@ section{position:relative;}
   font-family:'ATP Pleasurize', serif; font-size:14px;
   flex-shrink:0;
 }
-.testi-person .name{font-size:15px; font-weight:600;}
+.testi-person .name{font-size:16.5px; font-weight:600;}
 .testi-pill{
   display:inline-block;
   align-self:flex-start;
   border:1px solid rgba(28,63,138,0.3);
   color:var(--blue);
-  font-size:11px;
+  font-size:12.5px;
   padding:5px 12px;
   border-radius:var(--radius-full);
   font-weight:500;
@@ -1458,7 +1458,7 @@ section{position:relative;}
 .final-cta p{
   max-width:42ch; margin:0 auto 34px;
   color:rgba(255,252,240,0.78);
-  font-size:15px; line-height:1.6; font-weight:300;
+  font-size:17px; line-height:1.6; font-weight:300;
 }
 
 /* ---------- Footer ---------- */
@@ -1486,6 +1486,9 @@ footer{
   .hero-sub{ margin-bottom:34px; }
   .z-line{width:100%; text-align:left !important; margin-left:0 !important; margin-right:0 !important; transform:translateY(16px) !important;}
   .z-line.is-visible{transform:translateY(0) !important;}
+  .z-hero{ font-size:34px; }
+  .z-line.z-hero{ margin-bottom:64px; }
+  .z-sub{ font-size:23px; }
   .falling-drop{left:44px;}
   .drop-zstack{ padding-left:92px; }
   .gota-marquee{ display:block; }
