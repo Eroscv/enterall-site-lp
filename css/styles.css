@@ -1526,6 +1526,10 @@ footer{
 /* Carousel arrows (benefits + testimonials) on mobile: pull them out of the
    absolute overlay and into a row above the card content, same pattern as
    the product carousel's .catalog-nav, so they never sit on top of the card. */
+@media (max-width:700px){
+  #benefitCarouselWrap2{ display:none; }
+  .product-section-split .product-core{ width:min(240px, 48vw); }
+}
 @media (max-width: 860px){
   .testi-carousel-wrap{ display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
   .testi-carousel-wrap .carousel-arrow{ position:relative; top:auto; left:auto !important; right:auto !important; transform:none; }
