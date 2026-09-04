@@ -720,13 +720,26 @@ if (introBento) {
     const style = getComputedStyle(introBento);
     return first.getBoundingClientRect().width + parseFloat(style.gap || 16);
   }
+  function introActiveIndex() {
+    const step = introStep();
+    return Math.round(introBento.scrollLeft / step);
+  }
+  function introUpdateHeight() {
+    // Only one card is visible at a time on mobile (flex:0 0 100%), but since
+    // they sit in a single flex row they'd otherwise all be measured against
+    // the tallest card, leaving a big blank gap under shorter ones. Match the
+    // carousel's own height to whichever card is currently in view instead.
+    if (window.innerWidth > 700) { introBento.style.height = ''; return; }
+    const idx = introActiveIndex();
+    const active = introBento.children[idx];
+    if (active) introBento.style.height = active.offsetHeight + 'px';
+  }
   function introUpdateDots() {
-    const maxScroll = introBento.scrollWidth - introBento.clientWidth;
     if (introDots.length) {
-      const step = introStep();
-      const idx = Math.round(introBento.scrollLeft / step);
+      const idx = introActiveIndex();
       introDots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
     }
+    introUpdateHeight();
   }
   function introIsAtEnd() {
     const maxScroll = introBento.scrollWidth - introBento.clientWidth;
@@ -748,6 +761,10 @@ if (introBento) {
   });
   introBento.addEventListener('scroll', introUpdateDots, { passive: true });
   introUpdateDots();
+  window.addEventListener('load', introUpdateHeight);
+  introBento.querySelectorAll('img').forEach(img => {
+    if (!img.complete) img.addEventListener('load', introUpdateHeight);
+  });
 
   // Reveal all cards together once the carousel enters view. Per-card
   // IntersectionObserver is unreliable here because cards 2-5 sit far to the
@@ -786,7 +803,7 @@ if (introBento) {
     if (window.innerWidth > 700) return;
     introTimer = setInterval(introAutoplayTick, 4200);
   }
-  window.addEventListener('resize', introPlayAutoplay);
+  window.addEventListener('resize', () => { introPlayAutoplay(); introUpdateHeight(); });
   introPlayAutoplay();
 }
 

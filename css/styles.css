@@ -478,6 +478,7 @@ section{position:relative;}
     padding-left:20px;
     padding-right:20px;
     scrollbar-width:none;
+    transition:height .3s var(--ease);
   }
   .intro-bento::-webkit-scrollbar{ display:none; }
   .intro-card-formula, .intro-card-precision, .intro-card-vitamins, .intro-card-portfolio, .intro-card-ready{
