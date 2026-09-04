@@ -684,8 +684,14 @@ if (window.matchMedia('(pointer: fine)').matches) {
 
   let mx = window.innerWidth / 2, my = window.innerHeight / 2;
   let dx = mx, dy = my, rx = mx, ry = my;
+  const heroZoneEl = document.querySelector('.hero');
   window.addEventListener('mousemove', (e) => {
     mx = e.clientX; my = e.clientY;
+    if (heroZoneEl) {
+      const r = heroZoneEl.getBoundingClientRect();
+      const inHero = e.clientY >= r.top && e.clientY <= r.bottom && e.clientX >= r.left && e.clientX <= r.right;
+      document.body.classList.toggle('hero-cursor-zone', inHero);
+    }
   });
   window.addEventListener('mousedown', () => cursorRing.classList.add('cursor-click'));
   window.addEventListener('mouseup', () => cursorRing.classList.remove('cursor-click'));

@@ -1599,6 +1599,8 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
   width:28px; height:28px;
   margin-left:-14px; margin-top:-14px;
 }
+body.hero-cursor-zone .cursor-dot,
+body.hero-cursor-zone .cursor-ring{ box-shadow:none; }
 
 /* ---------- Product detail page (PDP) ---------- */
 .pdp-header{ background:var(--offwhite); padding-top:160px; }
