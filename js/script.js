@@ -725,14 +725,24 @@ if (introBento) {
       const idx = Math.round(introBento.scrollLeft / step);
       introDots.forEach((dot, i) => dot.classList.toggle('is-active', i === idx));
     }
-    if (introPrev) introPrev.disabled = introBento.scrollLeft <= 4;
-    if (introNext) introNext.disabled = introBento.scrollLeft >= maxScroll - 4;
+  }
+  function introIsAtEnd() {
+    const maxScroll = introBento.scrollWidth - introBento.clientWidth;
+    return introBento.scrollLeft >= maxScroll - 24;
   }
   introPrev?.addEventListener('click', () => {
-    introBento.scrollLeft = Math.max(0, introBento.scrollLeft - introStep());
+    if (introBento.scrollLeft <= 4) {
+      introBento.scrollTo({ left: introBento.scrollWidth, behavior: 'smooth' });
+    } else {
+      introBento.scrollLeft = Math.max(0, introBento.scrollLeft - introStep());
+    }
   });
   introNext?.addEventListener('click', () => {
-    introBento.scrollLeft = Math.min(introBento.scrollWidth, introBento.scrollLeft + introStep());
+    if (introIsAtEnd()) {
+      introBento.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      introBento.scrollLeft = Math.min(introBento.scrollWidth, introBento.scrollLeft + introStep());
+    }
   });
   introBento.addEventListener('scroll', introUpdateDots, { passive: true });
   introUpdateDots();
@@ -758,7 +768,7 @@ if (introBento) {
   // Runs continuously — never pauses, not even on manual interaction.
   let introTimer = null;
   function introAtEnd() {
-    return introBento.scrollLeft >= introBento.scrollWidth - introBento.clientWidth - 4;
+    return introBento.scrollLeft >= introBento.scrollWidth - introBento.clientWidth - 24;
   }
   function introAutoplayTick() {
     if (window.innerWidth > 700) return;
