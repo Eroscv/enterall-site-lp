@@ -685,12 +685,27 @@ if (window.matchMedia('(pointer: fine)').matches) {
   let mx = window.innerWidth / 2, my = window.innerHeight / 2;
   let dx = mx, dy = my, rx = mx, ry = my;
   const heroZoneEl = document.querySelector('.hero');
+  const heroAccentZones = [
+    { selector: '.hero .btn-primary', accent: 'blue' },
+    { selector: '.hero .btn-ghost, .hero .play-dot', accent: 'lime' },
+    { selector: '.hero h1, .hero-eyebrow, .hero-sub', accent: 'lime' }
+  ];
   window.addEventListener('mousemove', (e) => {
     mx = e.clientX; my = e.clientY;
     if (heroZoneEl) {
       const r = heroZoneEl.getBoundingClientRect();
       const inHero = e.clientY >= r.top && e.clientY <= r.bottom && e.clientX >= r.left && e.clientX <= r.right;
       document.body.classList.toggle('hero-cursor-zone', inHero);
+      if (inHero) {
+        const under = document.elementFromPoint(e.clientX, e.clientY);
+        let accent = 'default';
+        if (under) {
+          for (const zone of heroAccentZones) {
+            if (under.closest(zone.selector)) { accent = zone.accent; break; }
+          }
+        }
+        document.body.setAttribute('data-hero-cursor', accent);
+      }
     }
   });
   window.addEventListener('mousedown', () => cursorRing.classList.add('cursor-click'));
