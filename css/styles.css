@@ -696,10 +696,10 @@ section{position:relative;}
   padding-top:64px;
   padding-bottom:64px;
 }
-#produto.product-section{ padding-top:28px; }
+#produto.product-section{ padding-top:120px; }
 @media (max-width:700px){
   .product-section{ padding-top:44px; padding-bottom:44px; }
-  #produto.product-section{ padding-top:16px; }
+  #produto.product-section{ padding-top:64px; }
 }
 /* Fundo solido (sem onda decorativa) para "Uma fórmula, muitos motivos para confiar" */
 .product-section-split{
