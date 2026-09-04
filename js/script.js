@@ -737,6 +737,23 @@ if (introBento) {
   introBento.addEventListener('scroll', introUpdateDots, { passive: true });
   introUpdateDots();
 
+  // Reveal all cards together once the carousel enters view. Per-card
+  // IntersectionObserver is unreliable here because cards 2-5 sit far to the
+  // right inside the horizontal-scroll container and never geometrically
+  // intersect the viewport until swiped to, so we observe the container once.
+  const introCards = introBento.querySelectorAll('.intro-card.reveal');
+  if (introCards.length && 'IntersectionObserver' in window) {
+    const introBentoIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          introCards.forEach(card => card.classList.add('is-visible'));
+          introBentoIo.disconnect();
+        }
+      });
+    }, { threshold: 0.15 });
+    introBentoIo.observe(introBento);
+  }
+
   // Autoplay (mobile only): advance one card at a time, loop back at the end.
   // Runs continuously — never pauses, not even on manual interaction.
   let introTimer = null;
