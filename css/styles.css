@@ -328,7 +328,7 @@ section{position:relative;}
 /* ---------- Editorial intro (post-hero) ---------- */
 .intro-editorial{
   background:var(--offwhite);
-  padding-top:48px;
+  padding-top:20px;
   padding-bottom:64px;
 }
 .intro-head{
