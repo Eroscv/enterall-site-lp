@@ -1485,10 +1485,12 @@ footer{
 /* ---------- Responsive ---------- */
 @media (max-width: 860px){
   .hero .wrap{ padding:0 28px; }
-  .hero-content{ padding:0 0 104px; }
+  .hero .wrap.hero-content{ padding-bottom:56px; }
   .hero-eyebrow{ margin-bottom:28px; }
   .hero h1{ margin-bottom:22px; }
   .hero-sub{ margin-bottom:34px; }
+  .hero-actions{ flex-direction:column; align-items:flex-start; gap:18px; }
+  .scroll-cue{ display:none; }
   .z-line{width:100%; text-align:left !important; margin-left:0 !important; margin-right:0 !important; transform:translateY(16px) !important;}
   .z-line.is-visible{transform:translateY(0) !important;}
   .z-hero{ font-size:34px; }
