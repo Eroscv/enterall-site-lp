@@ -1023,7 +1023,7 @@ section{position:relative;}
   padding:110px 0 90px;
   box-shadow:0 40px 90px -50px rgba(9,17,41,0.5);
 }
-.testi-panel .wrap{ position:relative; max-width:1520px; }
+.testi-panel .wrap{ position:relative; max-width:1760px; }
 @media (max-width:900px){
   .testi-panel{ padding:70px 0 56px; }
 }
@@ -1075,7 +1075,6 @@ section{position:relative;}
   border:none;
 }
 .testi-play svg{width:16px; height:16px; fill:var(--offwhite); stroke:none; opacity:1;}
-.testi-carousel-wrap .carousel-arrow.prev{ left:300px; }
 .testi-carousel{
   display:flex;
   gap:20px;
@@ -1551,11 +1550,6 @@ footer{
   .product-section-split .product-core{ width:min(240px, 48vw); }
 }
 @media (max-width: 860px){
-  .testi-carousel-wrap{ display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
-  .testi-carousel-wrap .carousel-arrow{ position:relative; top:auto; left:auto !important; right:auto !important; transform:none; }
-  .testi-carousel-wrap .carousel-arrow.prev{ order:1; }
-  .testi-carousel-wrap .carousel-arrow.next{ order:2; }
-  .testi-carousel-wrap #testiCarousel{ order:3; flex:0 0 100%; }
   .benefit-carousel-wrap{ display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; }
   .benefit-carousel-wrap .benefit-carousel-arrow{ display:flex; position:relative; top:auto; left:auto; right:auto; transform:none; }
   .benefit-carousel-wrap .benefit-carousel-arrow.prev{ order:1; }
