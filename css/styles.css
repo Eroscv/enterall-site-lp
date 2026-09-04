@@ -1606,9 +1606,6 @@ body.blob-zone-active .cursor-ring{ opacity:0; }
   width:28px; height:28px;
   margin-left:-14px; margin-top:-14px;
 }
-body.footer-cursor-zone .cursor-dot{ background:var(--green-ok); }
-body.footer-cursor-zone .cursor-ring{ border-color:var(--green-ok); }
-body.footer-cursor-zone .cursor-ring.cursor-hover{ background:rgba(31,157,108,0.15); }
 
 /* ---------- Product detail page (PDP) ---------- */
 .pdp-header{ background:var(--offwhite); padding-top:160px; }

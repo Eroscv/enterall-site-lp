@@ -562,6 +562,7 @@ function lerp(a, b, n) { return (1 - n) * a + n * b; }
 
 const valuesSection = document.querySelector('.values-strip');
 const testiSectionEl = document.querySelector('.testi-section');
+const footerZoneEl = document.querySelector('.cta-footer-wrap');
 
 if (valuesSection && testiSectionEl) {
   const field = document.createElement('div');
@@ -579,7 +580,8 @@ if (valuesSection && testiSectionEl) {
 
   function zoneBounds() {
     const top = valuesSection.getBoundingClientRect().top + window.scrollY;
-    const bottom = testiSectionEl.getBoundingClientRect().bottom + window.scrollY;
+    const bottomEl = footerZoneEl || testiSectionEl;
+    const bottom = bottomEl.getBoundingClientRect().bottom + window.scrollY;
     return { top, bottom };
   }
 
@@ -682,14 +684,8 @@ if (window.matchMedia('(pointer: fine)').matches) {
 
   let mx = window.innerWidth / 2, my = window.innerHeight / 2;
   let dx = mx, dy = my, rx = mx, ry = my;
-  const footerZone = document.querySelector('.cta-footer-wrap');
   window.addEventListener('mousemove', (e) => {
     mx = e.clientX; my = e.clientY;
-    if (footerZone) {
-      const r = footerZone.getBoundingClientRect();
-      const inFooter = e.clientY >= r.top && e.clientY <= r.bottom && e.clientX >= r.left && e.clientX <= r.right;
-      document.body.classList.toggle('footer-cursor-zone', inFooter);
-    }
   });
   window.addEventListener('mousedown', () => cursorRing.classList.add('cursor-click'));
   window.addEventListener('mouseup', () => cursorRing.classList.remove('cursor-click'));
