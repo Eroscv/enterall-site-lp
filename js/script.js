@@ -682,8 +682,14 @@ if (window.matchMedia('(pointer: fine)').matches) {
 
   let mx = window.innerWidth / 2, my = window.innerHeight / 2;
   let dx = mx, dy = my, rx = mx, ry = my;
+  const footerZone = document.querySelector('.cta-footer-wrap');
   window.addEventListener('mousemove', (e) => {
     mx = e.clientX; my = e.clientY;
+    if (footerZone) {
+      const r = footerZone.getBoundingClientRect();
+      const inFooter = e.clientY >= r.top && e.clientY <= r.bottom && e.clientX >= r.left && e.clientX <= r.right;
+      document.body.classList.toggle('footer-cursor-zone', inFooter);
+    }
   });
   window.addEventListener('mousedown', () => cursorRing.classList.add('cursor-click'));
   window.addEventListener('mouseup', () => cursorRing.classList.remove('cursor-click'));
