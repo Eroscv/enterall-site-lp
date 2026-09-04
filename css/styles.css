@@ -765,6 +765,7 @@ section{position:relative;}
   min-height:1080px;
   z-index:1;
 }
+.product-section-split .product-stage{ min-height:auto; }
 .product-core{
   position:relative;
   width:min(430px, 62vw);
