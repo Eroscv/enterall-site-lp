@@ -730,18 +730,16 @@ if (introBento) {
   }
   introPrev?.addEventListener('click', () => {
     introBento.scrollLeft = Math.max(0, introBento.scrollLeft - introStep());
-    introPauseAutoplay();
   });
   introNext?.addEventListener('click', () => {
     introBento.scrollLeft = Math.min(introBento.scrollWidth, introBento.scrollLeft + introStep());
-    introPauseAutoplay();
   });
   introBento.addEventListener('scroll', introUpdateDots, { passive: true });
   introUpdateDots();
 
-  // Autoplay (mobile only): advance one card at a time, loop back at the end,
-  // pause on manual interaction and resume shortly after.
-  let introTimer = null, introResumeTimeout = null;
+  // Autoplay (mobile only): advance one card at a time, loop back at the end.
+  // Runs continuously — never pauses, not even on manual interaction.
+  let introTimer = null;
   function introAtEnd() {
     return introBento.scrollLeft >= introBento.scrollWidth - introBento.clientWidth - 4;
   }
@@ -754,21 +752,11 @@ if (introBento) {
     }
   }
   function introPlayAutoplay() {
-    introStopAutoplay();
+    if (introTimer) clearInterval(introTimer);
+    introTimer = null;
     if (window.innerWidth > 700) return;
     introTimer = setInterval(introAutoplayTick, 4200);
   }
-  function introStopAutoplay() {
-    if (introTimer) clearInterval(introTimer);
-    introTimer = null;
-  }
-  function introPauseAutoplay() {
-    introStopAutoplay();
-    if (introResumeTimeout) clearTimeout(introResumeTimeout);
-    introResumeTimeout = setTimeout(introPlayAutoplay, 6500);
-  }
-  introBento.addEventListener('pointerdown', introPauseAutoplay, { passive: true });
-  introBento.addEventListener('wheel', introPauseAutoplay, { passive: true });
   window.addEventListener('resize', introPlayAutoplay);
   introPlayAutoplay();
 }
