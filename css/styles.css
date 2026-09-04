@@ -467,6 +467,7 @@ section{position:relative;}
   /* Carrossel editorial: 1 card em destaque + peek do próximo */
   .intro-bento{
     display:flex;
+    align-items:flex-start;
     grid-template-columns:none;
     overflow-x:auto;
     scroll-snap-type:x mandatory;
