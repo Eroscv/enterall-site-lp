@@ -3,409 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Enterall — For People, For Patients</title>
-<link rel="stylesheet" href="css/styles.css">
+<title>Enterall — Em manutenção</title>
+<meta name="robots" content="noindex">
+<style>
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    background:#1c3f8a;
+    background:radial-gradient(ellipse at top, #2a4f9e 0%, #12285c 100%);
+    color:#fffcf0;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-align:center;
+    padding:32px;
+  }
+  .wrap{ max-width:560px; }
+  .logo{
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:0.02em;
+    margin-bottom:48px;
+    opacity:0.9;
+  }
+  .icon{
+    width:64px; height:64px;
+    margin:0 auto 28px;
+    border-radius:50%;
+    border:1.5px solid rgba(255,252,240,0.35);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .icon svg{width:28px; height:28px; stroke:#9fe870; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;}
+  h1{
+    font-size:clamp(26px,4vw,38px);
+    font-weight:700;
+    line-height:1.3;
+    margin-bottom:16px;
+  }
+  p{
+    font-size:16px;
+    line-height:1.6;
+    color:rgba(255,252,240,0.75);
+    font-weight:300;
+    max-width:40ch;
+    margin:0 auto;
+  }
+</style>
 </head>
 <body>
-
-<nav class="nav nav-hero" id="nav">
   <div class="wrap">
-    <a href="#" class="nav-logo">
-      <img src="assets/images/logo-white.png" class="logo-img logo-white" alt="Enterall">
-      <img src="assets/images/logo-blue.png" class="logo-img logo-blue" alt="Enterall">
-    </a>
-    <div class="nav-menu" id="navMenu">
-      <ul class="nav-links">
-        <li><a href="#produto">Produto</a></li>
-        <li><a href="#catalogo">Linha completa</a></li>
-        <li><a href="#cuidado">Cuidado</a></li>
-        <li><a href="#historias">Histórias</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-      <a href="#contato" class="nav-cta">Solicitar amostra</a>
+    <div class="logo">ENTERALL</div>
+    <div class="icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 3"/></svg>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
-      <span></span><span></span><span></span>
-    </button>
+    <h1>Estamos em manutenção</h1>
+    <p>Estamos fazendo algumas melhorias por aqui. Voltamos em breve — obrigado pela paciência.</p>
   </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <video class="hero-video" id="heroVideo" autoplay muted loop playsinline>
-    <source src="assets/video/hero-mobile.mp4" type="video/mp4" media="(max-width:700px)">
-    <source src="assets/video/hero.mp4" type="video/mp4">
-  </video>
-  <div class="hero-media"></div>
-  <div class="wrap hero-content">
-    <span class="eyebrow hero-eyebrow">For People, For Patients</span>
-    <h1>Construindo o novo patamar de nutrição clínica</h1>
-    <p class="hero-sub">Fórmulas completas que entregam mais em todas as áreas da vida do paciente</p>
-    <div class="hero-actions">
-      <a href="bluebox-max.html" class="btn btn-primary">Conhecer a fórmula</a>
-      <a href="#" class="btn-ghost">
-        <span class="play-dot">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 1.5L10 6L2 10.5V1.5Z" fill="currentColor"/></svg>
-        </span>
-        Assistir histórias reais
-      </a>
-    </div>
-  </div>
-  <div class="scroll-cue"><span class="line"></span><span style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase;">Rolar</span></div>
-</section>
-
-<!-- PRODUCT SECTION -->
-<section class="product-section section-pad" id="produto">
-  <div class="wrap">
-    <div class="formula-grid">
-      <div class="formula-list">
-        <div class="reveal formula-head">
-          <h2>Os 3 Diferenciais que a Enterall irá entregar no mercado</h2>
-          <p>Em mais de 10 anos de desenvolvimento, entramos no mercado brasileiro para entregar o melhor para todos.</p>
-          <span class="lhub-eyebrow formula-eyebrow">O que nos faz diferente</span>
-        </div>
-
-        <div class="formula-item reveal">
-          <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
-          <div class="formula-item-body">
-            <h4>Concentração de Proteína Láctea (MPC)</h4>
-            <p>Utilização dos mais altos índices de MPC nos principais produtos do portfólio, entregando o melhor tratamento comprovado cientificamente.</p>
-          </div>
-        </div>
-
-        <div class="formula-item reveal">
-          <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg></div>
-          <div class="formula-item-body">
-            <h4>Propriedade Pseudoplástica Antientupimento</h4>
-            <p>Inovação técnica pensada para facilitar a vida do enfermeiro no hospital ou do familiar em casa. A aplicação tem que ser prática, intuitiva e segura.</p>
-          </div>
-        </div>
-
-        <div class="formula-item reveal">
-          <div class="value-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
-          <div class="formula-item-body">
-            <h4>Amplo Portfólio de Fórmulas</h4>
-            <p>Diferentes linhas de produto de acordo com a necessidade: alta performance, vegetarianas ou melhor custo-benefício.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="formula-media reveal">
-        <div class="product-collage product-collage-single">
-          <img src="assets/images/products/bluebox-soy-1-2-lifestyle.jpg" class="product-collage-main" alt="Enterall Bluebox Soy 1.2">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCT CATALOG -->
-<section class="catalog-section" id="catalogo">
-  <div class="wrap">
-    <div class="catalog-header reveal">
-      <div>
-        <h2>Três linhas, fórmulas para todo tratamento</h2>
-        <p>Soluções de excelência nutricional para todos os casos.</p>
-      </div>
-    </div>
-
-    <div class="line-cards">
-      <div class="line-card line-card-max reveal">
-        <div class="line-card-body">
-          <h3>BlueBox Max</h3>
-          <span class="line-card-tag">A melhor fórmula do mercado</span>
-          <p>Linha formulada com proteína concentrada de leite (MPC) – 80% caseína e 20% whey protein.</p>
-        </div>
-      </div>
-
-      <div class="line-card line-card-soy reveal">
-        <div class="line-card-body">
-          <h3>BlueBox Soy</h3>
-          <span class="line-card-tag">A opção para vegetarianos/veganos</span>
-          <p>Linha formulada com proteína isolada de soja (SPI), que possui mais alto valor biológico e PDCAA entre as proteínas vegetais.</p>
-        </div>
-      </div>
-
-      <div class="line-card line-card-basic reveal">
-        <div class="line-card-body">
-          <h3>Intake Basic</h3>
-          <span class="line-card-tag">Democratizando a nutrição enteral</span>
-          <p>Nutrição especializada acessível, com qualidade e segurança para facilitar a adesão à terapia nutricional enteral.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EDITORIAL INTRO -->
-<section class="intro-editorial section-pad">
-  <div class="wrap">
-    <div class="intro-head reveal">
-      <h2>Mais que uma nutrição enteral,<br class="intro-break"> <em>um novo modo de cuidar de pessoas</em></h2>
-      <p>Formulações inovadoras para transformar a vida de todos envolvidos com nutrição intensiva.</p>
-    </div>
-
-    <div class="intro-bento-wrap">
-      <div class="intro-bento-nav">
-        <div class="intro-bento-dots" id="introDots">
-          <span class="intro-dot is-active"></span>
-          <span class="intro-dot"></span>
-          <span class="intro-dot"></span>
-          <span class="intro-dot"></span>
-          <span class="intro-dot"></span>
-        </div>
-        <div class="intro-bento-arrows">
-          <button class="intro-bento-arrow prev" id="introPrev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <button class="intro-bento-arrow next" id="introNext" aria-label="Próximo">
-            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
-      </div>
-      <div class="intro-bento" id="introBento">
-      <div class="intro-card intro-card-formula reveal">
-        <div class="intro-card-text">
-          <svg class="intro-card-icon" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
-          <h3>Fórmula <em>pseudoplástica</em></h3>
-          <p>Fim dos entupimentos de sondas e perda de valor nutricional com o tempo.</p>
-        </div>
-        <div class="intro-card-shot">
-          <img src="assets/images/products/product-1.png" alt="Enterall Bluebox Soy 1.2">
-        </div>
-      </div>
-
-      <div class="intro-card intro-card-precision reveal">
-        <svg class="intro-card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
-        <h3><em>Precisão</em> no tratamento</h3>
-        <p>Proteína, carga osmótica e lipídio calibrados por indicação.</p>
-        <div class="intro-badges">
-          <span class="intro-badge">18% <small>proteína</small></span>
-          <span class="intro-badge intro-badge-dark">199 <small>mOsm/L</small></span>
-          <span class="intro-badge">26,5% <small>TCM</small></span>
-        </div>
-      </div>
-
-      <div class="intro-card intro-card-vitamins reveal">
-        <svg class="intro-card-icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8L4.2 13.4 12 21.2l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
-        <h3>Vitaminas mais <em>concentradas</em> do mercado</h3>
-        <p>26 vitaminas e minerais, mais colina, em cada mililitro.</p>
-        <div class="intro-pills">
-          <span>A</span><span>D</span><span>E</span><span>K</span><span>C</span><span>B1–B12</span><span>Fe</span><span>Zn</span><span>Se</span><span>+16</span>
-        </div>
-      </div>
-
-      <div class="intro-card intro-card-portfolio reveal">
-        <svg class="intro-card-icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-        <h3><em>Portfólio</em> por restrição</h3>
-        <p>Leite, soja e acesso. Densidades de 1,0 a 1,5 kcal/mL.</p>
-        <div class="intro-number">7</div>
-        <span class="intro-number-sub">produtos · 3 famílias</span>
-      </div>
-
-      <div class="intro-card intro-card-ready reveal">
-        <svg class="intro-card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
-        <h3>Sem <em>manipulação</em> para o uso.</h3>
-        <p>Embalagem asséptica de 1 L, sem reconstituição.</p>
-        <div class="intro-number">7</div>
-        <span class="intro-number-sub">registros ANVISA</span>
-      </div>
-      </div>
-    </div>
-
-    <p class="intro-note reveal">Dados do Guia de Produtos 2025. Indicação caso a caso, pelo profissional de saúde prescritor.</p>
-  </div>
-</section>
-
-<!-- LINES COMPARISON -->
-<section class="lines-compare section-pad" id="linhas">
-  <div class="wrap">
-    <div class="lhub-table-head reveal">
-      <span class="lhub-eyebrow">Comparativo técnico</span>
-      <h2>Posicionamento por família</h2>
-    </div>
-
-    <p class="lhub-table-hint">Deslize para comparar →</p>
-    <div class="lhub-table-wrap reveal">
-      <table class="lhub-table">
-        <colgroup>
-          <col class="lhub-col-fixed">
-          <col class="lhub-col-data">
-          <col class="lhub-col-data">
-          <col class="lhub-col-data">
-        </colgroup>
-        <thead>
-          <tr>
-            <th class="lhub-table-fixed">Eixo</th>
-            <th class="lhub-th-max"><a href="bluebox-max.html">BlueBox Max</a><span>Referência em qualidade proteica</span></th>
-            <th class="lhub-th-soy"><a href="bluebox-soy.html">BlueBox Soy</a><span>Intolerância e escolha vegetal</span></th>
-            <th class="lhub-th-intake"><a href="intake-basic.html">Intake Basic</a><span>Acesso sem abrir mão do essencial</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td class="lhub-table-fixed">Fonte de proteína</td><td>MPC ultrafiltrada · 80% caseína · 20% whey</td><td>Isolada de soja (SPI)</td><td>Isolada de soja (SPI)</td></tr>
-          <tr><td class="lhub-table-fixed">Proteína (% do VET)</td><td class="lhub-num">17%</td><td class="lhub-num">18%</td><td class="lhub-num">11%</td></tr>
-          <tr><td class="lhub-table-fixed">Qualidade proteica documentada</td><td>Maiores índices de valor biológico e PDCAA documentados na literatura científica para proteína do leite</td><td>Maior valor biológico e PDCAA entre as proteínas vegetais — qualidade comparável às melhores proteínas animais</td><td>Mesma fonte do Soy, em concentração menor</td></tr>
-          <tr><td class="lhub-table-fixed">Perfil lipídico (TCM)</td><td class="lhub-num">26,5% (1.5) · 35,4% (1.2)</td><td class="lhub-num">26,5% (1.5) · 35,2% (1.2)</td><td class="lhub-num">10% (1.5) — predomínio de óleo de canola</td></tr>
-          <tr><td class="lhub-table-fixed">Osmolaridade (tolerância GI)</td><td class="lhub-num">199–264 mOsm/L — a mais baixa do portfólio</td><td class="lhub-num">230–366 mOsm/L</td><td class="lhub-num">165–246 mOsm/L</td></tr>
-          <tr><td class="lhub-table-fixed">Colesterol</td><td class="lhub-num">4,2 mg/100 mL</td><td class="lhub-num">0 mg</td><td class="lhub-num">0 mg</td></tr>
-          <tr><td class="lhub-table-fixed">Ômega 3 (100 mL, versão 1.5)</td><td class="lhub-num">146 mg</td><td class="lhub-num">146 mg</td><td class="lhub-num">280 mg — a mais alta do portfólio</td></tr>
-          <tr><td class="lhub-table-fixed">Fibra</td><td class="ct ct-no">❌</td><td>Fiber 1.2: 22 g/L (50% solúvel · 50% insolúvel)</td><td class="ct ct-no">❌</td></tr>
-          <tr><td class="lhub-table-fixed">Alérgeno</td><td>Leite</td><td>Soja</td><td>Soja</td></tr>
-          <tr><td class="lhub-table-fixed">Indicação-alvo</td><td>Máxima tolerância e adequação proteica: pacientes críticos, pós-cirúrgicos, restrição de sódio</td><td>Alergia à proteína do leite, intolerância à lactose, escolha vegetariana, restrição de colesterol</td><td>Barreira de acesso à nutrição especializada — alternativa à ausência de terapia ou dieta artesanal</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="reveal" style="text-align:center; margin-top:28px;">
-      <a href="bluebox-max.html" class="btn btn-primary">Comparar as linhas</a>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCT SECTION (formula completa) -->
-<section class="product-section product-section-split section-pad">
-  <div class="wrap">
-    <div class="center-head reveal">
-      <h2>Uma fórmula, muitos motivos para confiar</h2>
-    </div>
-
-    <div class="product-stage">
-      <div class="product-core-wrap">
-        <img src="assets/images/product-core.png" class="product-core" alt="Enterall Bluebox Soy 1.5, sabor baunilha">
-      </div>
-    </div>
-  </div>
-  <div class="section-fade section-fade-light"></div>
-</section>
-
-<!-- DROP / STATEMENT SECTION -->
-<section class="drop-section" id="cuidado">
-  <div class="section-fade section-fade-top-light"></div>
-  <div class="wrap">
-    <div class="drop-zstack" id="dropZstack">
-      <div class="drop-placeholder ph-tl" id="phTL" aria-hidden="true">
-        <img src="assets/images/gota/top-left.jpg" alt="">
-      </div>
-      <div class="drop-placeholder ph-tr" id="phTR" aria-hidden="true">
-        <img src="assets/images/gota/top-right.jpg" alt="">
-      </div>
-      <div class="drop-placeholder ph-bl" id="phBL" aria-hidden="true">
-        <img src="assets/images/gota/bottom-left.jpg" alt="">
-      </div>
-      <div class="drop-placeholder ph-br" id="phBR" aria-hidden="true">
-        <img src="assets/images/gota/bottom-right.jpg" alt="">
-      </div>
-      <div class="falling-drop" id="fallingDropZ">
-        <svg viewBox="0 0 40 56" fill="none">
-          <path d="M20 0C20 0 0 24 0 36.5C0 47.27 8.95 56 20 56C31.05 56 40 47.27 40 36.5C40 24 20 0 20 0Z" fill="#1c3f8a"/>
-        </svg>
-      </div>
-      <h2 class="z-line z-hero z-left">Uma gota de cuidado,</h2>
-      <h2 class="z-line z-hero z-right">uma vida inteira transformada.</h2>
-      <h2 class="z-line z-sub z-left">Cada embalagem carrega uma fórmula</h2>
-      <h2 class="z-line z-sub z-right">pensada em detalhe para quem recebe o cuidado</h2>
-      <h2 class="z-line z-sub z-left">e para quem cuida todos os dias.</h2>
-    </div>
-  </div>
-  <div class="section-fade section-fade-light"></div>
-</section>
-
-<!-- GOTA PHOTOS MARQUEE (mobile only) -->
-<div class="gota-marquee" id="gotaMarquee" aria-hidden="true">
-  <div class="gota-marquee-track" id="gotaMarqueeTrack"></div>
-</div>
-
-
-<!-- VALUES STRIP -->
-<section class="values-strip">
-  <svg width="0" height="0" style="position:absolute;">
-    <defs>
-      <filter id="testiGoo">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="9" result="blur" />
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -10" result="goo" />
-        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
-      </filter>
-    </defs>
-  </svg>
-  <div class="wrap">
-    <div class="center-head reveal">
-      <h2>O que fazemos diferente</h2>
-    </div>
-  </div>
-  <div class="values-carousel-wrap">
-    <button class="carousel-arrow prev" id="valuesPrev" aria-label="Anterior">
-      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <button class="carousel-arrow next" id="valuesNext" aria-label="Próximo">
-      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-    <div class="values-carousel" id="valuesCarousel">
-    </div>
-  </div>
-  <p class="carousel-hint">Arraste ou use as setas para explorar →</p>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testi-section" id="historias">
-  <div class="testi-panel">
-    <div class="wrap">
-      <div class="center-head testi-head reveal">
-        <h2>Cuidado em cada gota. Esperança em cada resultado.</h2>
-        <p>Acreditamos que a excelência é construída ouvindo quem mais importa.</p>
-      </div>
-      <div class="catalog-nav testi-nav">
-        <button class="carousel-arrow prev" id="testiPrev" aria-label="Anterior">
-          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-        </button>
-        <button class="carousel-arrow next" id="testiNext" aria-label="Próximo">
-          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-        </button>
-      </div>
-      <div class="testi-carousel-wrap">
-        <div class="testi-media-pin" id="testiMediaPin">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-          <button class="testi-play" aria-label="Reproduzir vídeo">
-            <svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg>
-          </button>
-        </div>
-        <div class="testi-carousel" id="testiCarousel"></div>
-      </div>
-
-      <p class="testi-note reveal">Depoimentos ilustrativos para fins de protótipo — substituir por histórias reais e autorizadas antes da publicação.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA + FOOTER (share one video background) -->
-<div class="cta-footer-wrap">
-  <video class="final-cta-video" autoplay muted loop playsinline>
-    <source src="assets/video/cta-bg-mobile.mp4" type="video/mp4" media="(max-width:700px)">
-    <source src="assets/video/cta-bg.mp4" type="video/mp4">
-  </video>
-  <div class="final-cta-overlay"></div>
-
-  <section class="final-cta" id="contato">
-    <div class="wrap">
-      <h2>Leve a Enterall para<br>quem você ama.</h2>
-      <p>Fale com a nossa equipe para amostras, pedidos ou dúvidas sobre a fórmula ideal para cada rotina.</p>
-      <a href="#" class="btn btn-primary">Solicitar amostra</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap footer-row">
-      <span>© 2026 Enterall Healthcare. Todos os direitos reservados.</span>
-      <ul class="footer-links">
-        <li><a href="#" aria-label="Instagram"><svg class="footer-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor" stroke="none"/></svg></a></li>
-        <li><a href="#" aria-label="LinkedIn"><svg class="footer-icon" viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="4.5" r="1.8"/><path d="M11 9v12M11 14c0-3 2.5-5 5-5s5 2 5 5v7"/></svg></a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </div>
-  </footer>
-</div>
-
-<script src="js/script.js" defer></script>
-
 </body>
 </html>
